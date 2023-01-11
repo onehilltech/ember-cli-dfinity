@@ -4,7 +4,14 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
-    // Add options here
+    // Can we move this to the add-on so we do not have to define it each time?!
+    autoImport: {
+      webpack: {
+        node: {
+          global: true
+        }
+      }
+    }
   });
 
   /*

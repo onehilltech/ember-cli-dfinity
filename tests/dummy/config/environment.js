@@ -20,6 +20,18 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    dfx: {
+      agents: {
+        $default: {
+          host: 'http://127.0.0.1:8000',
+        }
+      },
+
+      canisters: {
+        hello: 'rrkah-fqaaa-aaaaa-aaaaq-cai',
+      }
     }
   };
 

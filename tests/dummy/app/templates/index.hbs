@@ -1,0 +1,7 @@
+<form {{on "submit" this.submit}}>
+  <label for="name">Enter your name: &nbsp;</label>
+  <Input id="name" alt="Name" type="text" @value={{this.name}} />
+  <button type="submit">Click Me!</button>
+</form>
+
+<section>{{this.greeting}}</section>
