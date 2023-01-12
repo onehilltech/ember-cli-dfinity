@@ -10,7 +10,7 @@ module.exports = Blueprint.extend ({
     // This will ensure that the dependencies for @dfinity/* compile correctly.
 
     await this.insertIntoFile ('ember-cli-build.js', EMBER_CLI_BUILD_CONTENT, {
-      after: 'let app = new EmberAddon(defaults, {\n'
+      after: 'let app = new EmberApp(defaults, {\n'
     });
   }
 });
