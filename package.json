@@ -18,5 +18,11 @@
   "dependencies": {
     "fs-extra": "^11.1.0",
     "lodash": "^4.17.21"
+  },
+  "peerDependencies": {
+    "webpack": "^5.75.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.75.0"
   }
 }
