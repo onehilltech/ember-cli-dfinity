@@ -1,0 +1,22 @@
+{
+  "name": "dfx-ember-webpack-plugin",
+  "version": "0.0.0",
+  "description": "Webpack plugin for compiling an EmberJS frontend for the Internet Computer",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "dfx",
+    "ember",
+    "Internet Computer",
+    "frontend"
+  ],
+  "author": "One Hill Technologies, LLC",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "fs-extra": "^11.1.0",
+    "lodash": "^4.17.21"
+  }
+}
