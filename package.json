@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-dfinity",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "An add-on for using the Internet Computer in your EmberJS app.",
   "keywords": [
     "ember-addon",
