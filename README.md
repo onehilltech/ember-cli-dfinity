@@ -1,8 +1,7 @@
 ember-cli-dfinity
 ==============================================================================
 
-[Short description of the addon.]
-
+An add-on for using the Internet Computer in your EmberJS app.
 
 Compatibility
 ------------------------------------------------------------------------------

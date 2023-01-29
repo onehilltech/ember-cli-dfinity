@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-dfinity",
   "version": "0.2.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "An add-on for using the Internet Computer in your EmberJS app.",
   "keywords": [
     "ember-addon"
   ],
