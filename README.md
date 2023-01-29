@@ -38,6 +38,43 @@ will be completely automated in future releases of the add-on.
 2. Define one or more agents in `config/environment.js` (see Configuring your application.)
 
 
+Configuring your application
+------------------------------------------------------------------------------
+
+The `config/environment.js` file is where you configure how the Dapp connects to the
+Internet Computer. The most important section in the configuration is `dfx.agents`.
+This is where you define different agents that canisters use to communicate. The
+`$default` agent must always be defined. Below is an example configuration that 
+will use the `local` network. You can customize the configuration for different 
+environments, such as `production` vs `test`.
+
+```javascript
+// config/environment.js
+
+module.exports = function (environment) {
+  let ENV = {
+     // ...
+
+     dfx: {
+        canisters: {
+          // Optional. You can define caninsters not defined in canister_ids.json, or
+          // override the existing canister ids here.
+        },
+        
+        agents: {
+           $default: {
+              host: 'http://127.0.0.1:8000',
+           },
+        },
+     }
+  }; 
+   
+  // ...
+}
+
+```
+
+
 Contributing
 ------------------------------------------------------------------------------
 
