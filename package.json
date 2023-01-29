@@ -8,6 +8,7 @@
   "repository": "",
   "license": "MIT",
   "author": "",
+  "private": false,
   "directories": {
     "doc": "doc",
     "test": "tests"
