@@ -74,6 +74,12 @@ module.exports = function (environment) {
 
 ```
 
+Next Steps
+------------------------------------------------------------------------------
+
+Check out the dummy application in `tests/dummy` for an example on how to 
+integrate canisters from the Internet Computer into your application. We will
+provide more guidance on this over the course of the project.
 
 Contributing
 ------------------------------------------------------------------------------
