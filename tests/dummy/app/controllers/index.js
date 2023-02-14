@@ -3,7 +3,7 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking'
 import { inject as service } from '@ember/service';
 
-import { idlFactory } from '../dfx/hello.did';
+import { actor } from 'ember-cli-dfinity';
 
 export default class IndexController extends Controller {
   @tracked
@@ -12,15 +12,13 @@ export default class IndexController extends Controller {
   @tracked
   greeting;
 
-  @service
-  dfinity;
+  @actor({ canister: 'hello' })
+  hello;
 
   @action
   async submit (ev) {
     // Prevent the default behavior for the submit button.
     ev.preventDefault ();
-
-    const hello = await this.dfinity.createActorFromIdl (idlFactory, { canister: 'hello' });
-    this.greeting = await hello.greet (this.name);
+    this.greeting = await this.hello.greet (this.name);
   }
 }

@@ -26,6 +26,10 @@ module.exports = function (environment) {
         $default: {
           host: 'http://127.0.0.1:8000',
         }
+      },
+
+      canisters: {
+        hello: 'rrkah-fqaaa-aaaaa-aaaaq-cai',
       }
     }
   };

@@ -29,7 +29,7 @@ export default class DfinityService extends Service {
    * @param idlFactory
    * @param options
    */
-  async createActorFromIdl (idlFactory, options = {}) {
+  createActorFromIdl (idlFactory, options = {}) {
     const {
       agentName = '$default',
       canister,
@@ -37,7 +37,7 @@ export default class DfinityService extends Service {
       actorOptions = {},
     } = options;
 
-    const agent = await this.agentFor (agentName);
+    const agent = this.agentFor (agentName);
 
     return Actor.createActor (idlFactory, {
       agent,
@@ -50,7 +50,7 @@ export default class DfinityService extends Service {
    * Get the default http agent.
    */
   get defaultAgent () {
-    return (async () => await this.agentFor (DEFAULT_AGENT_NAME)) ();
+    return this.agentFor (DEFAULT_AGENT_NAME);
   }
 
   /**
@@ -73,7 +73,7 @@ export default class DfinityService extends Service {
    * @param name
    * @return {any}
    */
-  async agentFor (name) {
+  agentFor (name) {
     let agent = agents.get (name);
 
     if (isPresent (agent)) {
@@ -94,13 +94,11 @@ export default class DfinityService extends Service {
     const { environment } = ENV;
 
     if (environment !== 'production') {
-      try {
-        await agent.fetchRootKey ();
-      }
-      catch (err) {
-        console.warn ("Unable to fetch root key. Check to ensure that your local replica is running");
-        console.error (err);
-      }
+      agent.fetchRootKey ()
+        .catch (err => {
+          console.warn ('Unable to fetch root key. Check to ensure that your local replica is running');
+          console.error (err);
+        });
     }
 
     return agent;

@@ -1,18 +1,25 @@
 import { Actor as IC } from '@dfinity/agent';
+import EmberObject from '@ember/object';
+import { inject as service } from '@ember/service';
 
 /**
  * @class Actor
  *
  * The base class definition for all actors from the Internet Computer.
  */
-export default class Actor {
+export default class Actor extends EmberObject {
+  @service
+  dfinity;
+
   /**
    * Create an instance of this actor.
    *
    * @param options       Creation options
    */
-  createInstance (options) {
-    return IC.createActor (this._createIdlFactory.bind (this), options);
+  createInstance (options = {}) {
+    //const idlFactory = this._createIdlFactory.bind (this);
+    //return this.dfinity.createActorFromIdl ()
+    //return IC.createActor (this._createIdlFactory.bind (this), options);
   }
 
   /**
@@ -64,13 +71,14 @@ export function actorFromIdlFactory (idlFactory, name) {
      * @param options       Creation options
      */
     createInstance (options) {
-      return IC.createActor (idlFactory, options);
+      return this.dfinity.createActorFromIdl (idlFactory, options);
     }
   };
 
+  /*
   if (!!name) {
     Object.defineProperty (Clazz, 'name', { value: name });
-  }
+  }*/
 
   return Clazz;
 }
