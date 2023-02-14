@@ -52,16 +52,7 @@ export default class DfinityService extends Service {
   get defaultAgent () {
     return this.agentFor (DEFAULT_AGENT_NAME);
   }
-
-  /**
-   * Get the IDL factory for the actor.
-   * *
-   * @param name
-   */
-  idlFactoryFor (name) {
-
-  }
-
+  
   canisterFor (name) {
     const ENV = getOwner (this).resolveRegistration ('config:environment');
     return get (ENV, `dfx.canisters.${name}`);
