@@ -1,5 +1,5 @@
-const { forEach } = require ('lodash');
-const path = require ('path');
+const { forEach } = require('lodash');
+const path = require('path');
 
 /**
  * Require the canisters file for the target network.
@@ -7,12 +7,13 @@ const path = require ('path');
  * @param network
  * @return {*}
  */
-function requireCanistersConfig (network) {
-  const configFile = network === 'local' ?
-    path.resolve (process.env.DFX_ROOT, '.dfx', 'local', 'canister_ids.json') :
-    path.resolve (process.env.DFX_ROOT, 'canister_ids.json');
+function requireCanistersConfig(network) {
+  const configFile =
+    network === 'local'
+      ? path.resolve(process.env.DFX_ROOT, '.dfx', 'local', 'canister_ids.json')
+      : path.resolve(process.env.DFX_ROOT, 'canister_ids.json');
 
-  return require (configFile);
+  return require(configFile);
 }
 
 /**
@@ -21,13 +22,10 @@ function requireCanistersConfig (network) {
  *
  * @param network
  */
-function requireCanisters (network) {
+function requireCanisters(network) {
   try {
-    return requireCanistersConfig (network);
-  }
-  catch (err) {
-
-  }
+    return requireCanistersConfig(network);
+  } catch (err) {}
 
   return {};
 }
@@ -39,13 +37,13 @@ function requireCanisters (network) {
  * @param registry          Canister register
  * @param environment       Excuction environment
  */
-function registerCanisters (registry, environment) {
-  const network = process.env.DFX_NETWORK || (environment === 'production' ? 'ic' : 'local');
-  const canisters = requireCanisters (network);
+function registerCanisters(registry, environment) {
+  const network =
+    process.env.DFX_NETWORK || (environment === 'production' ? 'ic' : 'local');
+  const canisters = requireCanisters(network);
 
-  forEach (canisters, (config, name) => {
-    if (!registry[name])
-      registry[name] = config[network];
+  forEach(canisters, (config, name) => {
+    if (!registry[name]) registry[name] = config[network];
   });
 }
 
@@ -56,13 +54,11 @@ function registerCanisters (registry, environment) {
  * @param config               Application configuration
  */
 module.exports = function (environment, config) {
-  if (!config.dfx)
-    config.dfx = {};
+  if (!config.dfx) config.dfx = {};
 
-  if (!config.dfx.canisters)
-    config.dfx.canisters = {};
+  if (!config.dfx.canisters) config.dfx.canisters = {};
 
-  registerCanisters (config.dfx.canisters, environment);
+  registerCanisters(config.dfx.canisters, environment);
 
   return config;
 };

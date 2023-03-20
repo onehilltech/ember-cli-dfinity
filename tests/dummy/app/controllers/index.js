@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
-import { tracked } from '@glimmer/tracking'
+import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 
 import { actor } from 'ember-cli-dfinity';
@@ -16,9 +16,9 @@ export default class IndexController extends Controller {
   hello;
 
   @action
-  async submit (ev) {
+  async submit(ev) {
     // Prevent the default behavior for the submit button.
-    ev.preventDefault ();
-    this.greeting = await this.hello.greet (this.name);
+    ev.preventDefault();
+    this.greeting = await this.hello.greet(this.name);
   }
 }

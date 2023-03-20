@@ -25,13 +25,13 @@ module.exports = function (environment) {
       agents: {
         $default: {
           host: 'http://127.0.0.1:8000',
-        }
+        },
       },
 
       canisters: {
         hello: 'rrkah-fqaaa-aaaaa-aaaaq-cai',
-      }
-    }
+      },
+    },
   };
 
   if (environment === 'development') {

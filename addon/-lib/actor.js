@@ -16,7 +16,7 @@ export default class Actor extends EmberObject {
    *
    * @param options       Creation options
    */
-  createInstance (options = {}) {
+  createInstance(options = {}) {
     //const idlFactory = this._createIdlFactory.bind (this);
     //return this.dfinity.createActorFromIdl ()
     //return IC.createActor (this._createIdlFactory.bind (this), options);
@@ -29,7 +29,7 @@ export default class Actor extends EmberObject {
    * @param definition       The IDL definition for the action.
    * @private
    */
-  defineAction (name, definition) {
+  defineAction(name, definition) {
     (this._actions_ = this._actions_ || {})[name] = definition;
   }
 
@@ -40,19 +40,19 @@ export default class Actor extends EmberObject {
    * @returns {*}
    * @private
    */
-  _createIdlFactory ({ IDL }) {
+  _createIdlFactory({ IDL }) {
     // Map each of the actions defined in this actor to its IDL definition. We then
     // use the collection of definitions to instantiate the actor service.
 
-    const service = mapValues (this._actions_, (definition) => {
+    const service = mapValues(this._actions_, (definition) => {
       const [input, output, type] = definition;
-      const inputTypes = input.map (type => mapType (IDL, type));
-      const outputTypes = output.map (type => mapType (IDL, type));
+      const inputTypes = input.map((type) => mapType(IDL, type));
+      const outputTypes = output.map((type) => mapType(IDL, type));
 
-      return IDL.Func (inputTypes, outputTypes, type);
+      return IDL.Func(inputTypes, outputTypes, type);
     });
 
-    return IDL.Service (service);
+    return IDL.Service(service);
   }
 }
 
@@ -63,15 +63,15 @@ export default class Actor extends EmberObject {
  * @param idlFactory        The auto-generated IDL factory
  * @param name              Name of the class
  */
-export function actorFromIdlFactory (idlFactory, name) {
+export function actorFromIdlFactory(idlFactory, name) {
   const Clazz = class extends Actor {
     /**
      * Create an instance of this actor.
      *
      * @param options       Creation options
      */
-    createInstance (options) {
-      return this.dfinity.createActorFromIdl (idlFactory, options);
+    createInstance(options) {
+      return this.dfinity.createActorFromIdl(idlFactory, options);
     }
   };
 
