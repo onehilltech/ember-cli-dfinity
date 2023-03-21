@@ -140,7 +140,8 @@ module.exports = function (environment) {
       agents: {
         // An optional list of agents that can be used by the @actor decorator. The
         // add-on will automatically generate this agent list from the networks defined
-        // in dfx.json. You can override any auto-generate agent here.
+        // in dfx.json. You can override any auto-generate agent here similar to how
+        // we are overriding the agent for the `local` network.
         
         local: { 
           host: 'http://127.0.0.1:8000', 
