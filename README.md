@@ -30,7 +30,7 @@ Defining actors
 
 Actors are the primary artifacts (or components) exposed by a canister running
 on the Internet Computer. The actor has an interface, which represents the publicly
-accessible methods of the canister. When developing your own DApp, you will have
+accessible methods of the canister. When developing your own Dapp, you will have
 a candid interface for the actor like the following:
 
 ```motoko
@@ -48,7 +48,7 @@ it using the following command:
 
 > You must run this command from an EmberJS frontend application that is located
 > in `$DFX_ROOT/src`. For example, `$DFX_ROOT/src/hello_frontend`. `$DFX_ROOT` is
-> the root project directory of the DApp, and has the `dfx.json` file.
+> the root project directory of the Dapp, and has the `dfx.json` file.
 
 This command will create a symbolic link to the JavaScript declaration in 
 `$ROOT/app/declarations`, and then define the actor `hello` in `$ROOT/app/actors`
@@ -109,11 +109,10 @@ Configuring your application
 ------------------------------------------------------------------------------
 
 The `config/environment.js` file is where you configure how the Dapp connects to the
-Internet Computer. The most important section in the configuration is `dfx.agents`.
-This is where you define different agents that canisters use to communicate. The
-`$default` agent must always be defined. Below is an example configuration that 
-will use the `local` network. You can customize the configuration for different 
-environments, such as `production` vs `test`.
+Internet Computer. The configuration is auto-generated for you during the build
+process. This allows the add-on to work out-of-the-box with little configuration 
+effort on your part. You, however, have the option of overriding the default 
+configurations via `config/environment.js`.
 
 ```javascript
 // config/environment.js
@@ -152,7 +151,6 @@ module.exports = function (environment) {
    
   // ...
 }
-
 ```
 
 Contributing
