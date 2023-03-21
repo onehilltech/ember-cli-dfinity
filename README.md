@@ -120,20 +120,30 @@ environments, such as `production` vs `test`.
 
 module.exports = function (environment) {
   let ENV = {
-     // ...
+    // ...
 
-     dfx: {
-        canisters: {
-          // Optional. You can define caninsters not defined in canister_ids.json, or
-          // override the existing canister ids here.
-        },
+    dfx: {
+      // Set the default canister name used for all actors. The name is either one of the
+      // names that appears in canister_ids.json, or in the canisters definition below.
+      
+      defaultCanister: '',
+      
+      // Set the default canister id used for all actors. This property takes precedence
+      // over defaultCanister when both are defined.
+      
+      defaultCanisterId: '',
+      
+      canisters: {
+        // Optional. You can define caninsters not defined in canister_ids.json, or
+        // override the existing canister ids here.
+      },
         
-        agents: {
-           $default: {
-              host: 'http://127.0.0.1:8000',
-           },
-        },
-     }
+      agents: { 
+        $default: { 
+          host: 'http://127.0.0.1:8000', 
+        }, 
+      }, 
+    }
   }; 
    
   // ...
