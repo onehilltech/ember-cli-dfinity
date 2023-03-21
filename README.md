@@ -144,6 +144,7 @@ module.exports = function (environment) {
         // we are overriding the agent for the `local` network.
         
         local: { 
+          // Define other @dfinity/agent options here.
           host: 'http://127.0.0.1:8000', 
         }, 
       }, 
