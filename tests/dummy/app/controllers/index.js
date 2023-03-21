@@ -12,7 +12,7 @@ export default class IndexController extends Controller {
   @tracked
   greeting;
 
-  @actor({ canister: 'hello' })
+  @actor
   hello;
 
   @action

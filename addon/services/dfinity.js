@@ -3,6 +3,7 @@ import Service from '@ember/service';
 import { getOwner } from '@ember/application';
 import { isPresent, isNone } from '@ember/utils';
 import { get } from '@ember/object';
+import { assert } from '@ember/debug';
 
 import { Actor, HttpAgent } from '@dfinity/agent';
 
@@ -55,7 +56,11 @@ export default class DfinityService extends Service {
 
   canisterFor(name) {
     const ENV = getOwner(this).resolveRegistration('config:environment');
-    return get(ENV, `dfx.canisters.${name}`);
+    const canisterId = get(ENV, `dfx.canisters.${name}`);
+
+    assert (`The canisterId for ${name} does not exist. Please add dfx.canisters.${name} to config/environment.js.`, !!canisterId);
+
+    return canisterId;
   }
 
   /**

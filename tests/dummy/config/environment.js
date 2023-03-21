@@ -22,6 +22,8 @@ module.exports = function (environment) {
       // when it is created
     },
     dfx: {
+      defaultCanister: 'hello',
+
       agents: {
         $default: {
           host: 'http://127.0.0.1:8000',
@@ -29,6 +31,7 @@ module.exports = function (environment) {
       },
 
       canisters: {
+        // We need this cansister id since it is not local to our project.
         hello: 'rrkah-fqaaa-aaaaa-aaaaq-cai',
       },
     },

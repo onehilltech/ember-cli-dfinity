@@ -7,18 +7,15 @@ import { guidFor } from '@ember/object/internals';
 
 import { isString } from 'lodash';
 
-export default decorator(function actorDecorator(
-  target,
-  name,
-  descriptor,
-  [lookupName, options]
-) {
+export default decorator(function actorDecorator (target, name, descriptor, params) {
   delete descriptor.initializer;
   delete descriptor.writable;
   delete descriptor.configurable;
 
+  let [lookupName, options] = params;
+
   if (isNone(options)) {
-    options = {};
+    options = { };
   }
 
   if (isPresent(lookupName)) {
@@ -31,10 +28,8 @@ export default decorator(function actorDecorator(
   }
 
   let { canister, canisterId } = options;
-  assert(
-    'You must set the canister or canisterId property on the @actor decorator options.',
-    !!canister || !!canisterId
-  );
+  const typename = `actor:${lookupName}`;
+  let instanceKey;
 
   descriptor.get = function () {
     // Compute the fully qualified typename for the actor, and the singleton key. We
@@ -44,11 +39,28 @@ export default decorator(function actorDecorator(
     const owner = getOwner(this);
 
     if (isEmpty(canisterId)) {
-      canisterId = owner.lookup('service:dfinity').canisterFor(canister);
+      const ENV = owner.resolveRegistration ('config:environment');
+      const {
+        defaultCanister,
+        defaultCanisterId
+      } = (ENV.dfx || {});
+
+      // Set the canister id to the default canister id from the configuration file. If we still
+      // do not have a canister id for the actor, lets check for the named canister. We can either
+      // use the one provided in the decorator options, or the default name.
+
+      canisterId = defaultCanisterId;
+
+      if (isEmpty (canisterId)) {
+        canisterId = owner.lookup('service:dfinity').canisterFor (canister || defaultCanister);
+      }
+
+      assert ('Actor has no canister. You must define the canister or canisterId property in @actor, or set defaultCanister or defaultCanisterId in config/environment.js', !!canisterId);
     }
 
-    const typename = `actor:${lookupName}`;
-    const instanceKey = `${typename}@${canisterId}`;
+    if (isEmpty (instanceKey)) {
+      instanceKey = `${typename}@${canisterId}`;
+    }
 
     let instance = owner.lookup(instanceKey, { instantiate: false });
 
@@ -63,7 +75,8 @@ export default decorator(function actorDecorator(
     const actor = owner.lookup(typename);
     assert(`The actor with name "${typename}" does not exist.`, !!actor);
 
-    instance = actor.createInstance(options);
+    const createOptions = Object.assign ({}, options, { canisterId });
+    instance = actor.createInstance (createOptions);
     owner.register(instanceKey, instance, { instantiate: false });
 
     return instance;
