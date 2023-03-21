@@ -15,10 +15,13 @@ export default class IndexController extends Controller {
   @actor({ canister: 'hello' })
   hello;
 
+  @actor ({ canister: 'hello' })
+  helloManual;
+
   @action
   async submit(ev) {
     // Prevent the default behavior for the submit button.
     ev.preventDefault();
-    this.greeting = await this.hello.greet(this.name);
+    this.greeting = await this.helloManual.greet(this.name);
   }
 }
