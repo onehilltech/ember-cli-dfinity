@@ -1,5 +1,11 @@
-const { forEach } = require('lodash');
+const { forEach, forOwn } = require('lodash');
 const path = require('path');
+
+const isCompilingDfx = !!process.env.DFX_ROOT;
+
+function defaultHttpProtocol (network) {
+  return network === 'local' ? 'http://' : 'https://';
+}
 
 /**
  * Require the canisters file for the target network.
@@ -25,9 +31,54 @@ function requireCanistersConfig(network) {
 function requireCanisters(network) {
   try {
     return requireCanistersConfig(network);
-  } catch (err) {}
+  }
+  catch (err) {
+    return {};
+  }
+}
 
-  return {};
+/**
+ * Require the dfx configuration.
+ *
+ * @return {Promise<void> | Promise<any>}
+ */
+function requireDfxConfig () {
+  const dfxPath = path.resolve(process.env.DFX_ROOT, 'dfx.json');
+  return require (dfxPath);
+}
+
+/**
+ * Load the agents from the dfx configuration file.
+ *
+ * @param network
+ */
+function requireAgents (network) {
+  const dfxConfig = requireDfxConfig ();
+  const networks = dfxConfig.networks || {};
+  const agents = {};
+
+  forOwn (networks, (config, network) => {
+    agents[network] = {
+      host: `${defaultHttpProtocol (network)}${config.bind}`
+    }
+  })
+
+  return agents;
+}
+
+/**
+ *
+ * @param registry
+ * @param network
+ */
+function registerAgents (registry, network) {
+  const agents = requireAgents (network);
+
+  forOwn (agents, (config, name) => {
+    if (!registry[name]) {
+      registry[name] = config
+    }
+  });
 }
 
 /**
@@ -35,15 +86,15 @@ function requireCanisters(network) {
  * if they are not already defined.
  *
  * @param registry          Canister register
- * @param environment       Excuction environment
+ * @param environment       Target network
  */
-function registerCanisters(registry, environment) {
-  const network =
-    process.env.DFX_NETWORK || (environment === 'production' ? 'ic' : 'local');
+function registerCanisters(registry, network) {
   const canisters = requireCanisters(network);
 
   forEach(canisters, (config, name) => {
-    if (!registry[name]) registry[name] = config[network];
+    if (!registry[name]) {
+      registry[name] = config[network];
+    }
   });
 }
 
@@ -54,11 +105,30 @@ function registerCanisters(registry, environment) {
  * @param config               Application configuration
  */
 module.exports = function (environment, config) {
-  if (!config.dfx) config.dfx = {};
+  if (!isCompilingDfx) {
+    return {};
+  }
 
-  if (!config.dfx.canisters) config.dfx.canisters = {};
+  if (!config.dfx) {
+    config.dfx = {};
+  }
 
-  registerCanisters(config.dfx.canisters, environment);
+  if (!config.dfx.canisters) {
+    config.dfx.canisters = {};
+  }
+
+  if (!config.dfx.agents) {
+    config.dfx.agents = {};
+  }
+
+  const network = process.env.DFX_NETWORK || (environment === 'production' ? 'ic' : 'local');
+
+  if (!config.dfx.defaultAgent) {
+    config.dfx.defaultAgent = network;
+  }
+
+  registerAgents (config.dfx.agents, network);
+  registerCanisters (config.dfx.canisters, network);
 
   return config;
 };
