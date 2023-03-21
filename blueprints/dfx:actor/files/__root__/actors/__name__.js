@@ -1,4 +1,4 @@
-<% if (declaration) { %>
+<% if (hasDeclaration) { %>
 import { actorFromIdlFactory } from 'ember-cli-dfinity';
 import { idlFactory } from '../declarations/<%= dasherizedModuleName %>.did';
 
@@ -8,5 +8,5 @@ import { Actor } from 'ember-cli-dfinity';
 
 export default class <%= classifiedModuleName %>Actor extends Actor {
 
-  }
+}
 <% } %>

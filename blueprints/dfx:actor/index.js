@@ -1,6 +1,6 @@
 'use strict';
 
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require ('path');
 
 module.exports = {
@@ -15,7 +15,7 @@ module.exports = {
 
   locals (options) {
     return {
-      declaration: !!options.declaration
+      hasDeclaration: options.declaration !== undefined
     };
   },
 
@@ -29,7 +29,7 @@ module.exports = {
       const target = path.resolve (options.target, '../declarations', declaration, candidFileName);
       const link = path.resolve (options.target, './app/declarations', candidFileName);
 
-      fs.symlinkSync (target, link, "file");
+      fs.ensureSymlinkSync (target, link, "file");
     }
   },
 };
