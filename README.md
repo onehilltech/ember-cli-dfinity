@@ -138,8 +138,12 @@ module.exports = function (environment) {
         // override the existing canister ids here.
       },
         
-      agents: { 
-        $default: { 
+      agents: {
+        // An optional list of agents that can be used by the @actor decorator. The
+        // add-on will automatically generate this agent list from the networks defined
+        // in dfx.json. You can override any auto-generate agent here.
+        
+        local: { 
           host: 'http://127.0.0.1:8000', 
         }, 
       }, 
