@@ -44,7 +44,7 @@ service : {
 We import this interface definition into the EmberJS application to leverage 
 it using the following command: 
 
-    ember g actor hello --declaration
+    ember g dfx:actor hello --declaration
 
 > You must run this command from an EmberJS frontend application that is located
 > in `$DFX_ROOT/src`. For example, `$DFX_ROOT/src/hello_frontend`. `$DFX_ROOT` is
