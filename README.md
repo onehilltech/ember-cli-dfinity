@@ -29,7 +29,7 @@ Defining actors
 ------------------------------------------------------------------------------
 
 Actors are the primary artifacts (or components) exposed by a canister running
-on the Internet Computer. The actor has an interface, which represent the publicly
+on the Internet Computer. The actor has an interface, which represents the publicly
 accessible methods of the canister. When developing your own DApp, you will have
 a candid interface for the actor like the following:
 
@@ -44,18 +44,66 @@ service : {
 We import this interface definition into the EmberJS application to leverage 
 it using the following command: 
 
-    ember g actor hello --declaration hello
+    ember g actor hello --declaration
 
 > You must run this command from an EmberJS frontend application that is located
 > in `$DFX_ROOT/src`. For example, `$DFX_ROOT/src/hello_frontend`. `$DFX_ROOT` is
-> the root project directory of the DApp, and has the `dfx.json` file. 
-
+> the root project directory of the DApp, and has the `dfx.json` file.
 
 This command will create a symbolic link to the JavaScript declaration in 
 `$ROOT/app/declarations`, and then define the actor `hello` in `$ROOT/app/actors`
 where `$ROOT` is the root directory of the EmberJS frontend application.
 
+### Manually defining actors
 
+There will be times you need to manually define an actor's interface. For example,
+your frontend needs to reference a canister that is not local to your project. You
+can use the `@query` and `@update` decorators to manually define an actor.
+
+```JavaScript
+import { Actor, query, update } from 'ember-cli-dfinity';
+
+export default class HelloActor extends Actor {
+  @query (['text'], ['text'])  // can also write @query('text, 'text')
+  greet;
+};
+```
+
+Using actors
+------------------------------------------------------------------------------
+
+You use defined actors by injecting them into EmberJS an entity (e.g., controller,
+router, service, component, etc.) using the `@actor` decorator. For example, the 
+code below shows how you can inject the `hello` actor into an EmberJS controller
+and call the `greet` method.
+
+```JavaScript
+import Controller from '@ember/controller';
+import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
+import { actor } from 'ember-cli-dfinity';
+
+export default class IndexController extends Controller {
+  @tracked
+  name;
+
+  @tracked
+  greeting;
+
+  // Bind the hello actor to the hello variable.
+  @actor({ canister: 'hello' })
+  hello;
+
+  @action
+  async submit(ev) {
+    // Prevent the default behavior for the submit button.
+    ev.preventDefault();
+
+    // Call the greet() method on the hello actor.
+    this.greeting = await this.hello.greet(this.name);
+  }
+}
+```
 
 Configuring your application
 ------------------------------------------------------------------------------
