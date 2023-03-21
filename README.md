@@ -91,7 +91,7 @@ export default class IndexController extends Controller {
   greeting;
 
   // Bind the hello actor to the hello variable.
-  @actor({ canister: 'hello' })
+  @actor
   hello;
 
   @action
