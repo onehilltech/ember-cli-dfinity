@@ -4,8 +4,7 @@ const fs = require('fs');
 const path = require ('path');
 
 module.exports = {
-  description:
-    'Define an actor deployed to a canister on the Internet Computer',
+  description: 'Define an actor deployed to a canister on the Internet Computer',
 
   availableOptions: [
     {
@@ -13,6 +12,12 @@ module.exports = {
       type: String,
     },
   ],
+
+  locals (options) {
+    return {
+      declaration: !!options.declaration
+    };
+  },
 
   afterInstall (options) {
     if (options.declaration !== undefined) {
