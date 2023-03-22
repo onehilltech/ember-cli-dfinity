@@ -2,75 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdbe049b-97c3-48fe-8fcd-c7db8ae96c70" name="Changes" comment="d">
-      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ember-cli" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.watchmanconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addon/-lib/actor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addon/-lib/decorators/actor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addon/-lib/decorators/function.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addon/-lib/decorators/query.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addon/-lib/decorators/update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addon/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addon/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addon/initializers/dfinity.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addon/services/dfinity.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/initializers/dfinity.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/dfinity.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueprints/dfx:actor/files/__root__/actors/__name__.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueprints/dfx:actor/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueprints/ember-cli-dfinity/files/__root__/actors/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueprints/ember-cli-dfinity/files/__root__/declarations/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueprints/ember-cli-dfinity/files/ember-cli-build.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueprints/ember-cli-dfinity/files/public/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blueprints/ember-cli-dfinity/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/ember-try.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/getting-started.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ember-cli-build.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/dfx-ember-app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testem.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/app/actors/hello-manual.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/app/actors/hello.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/app/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/app/components/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/app/controllers/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/app/controllers/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/app/declarations/hello.did.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/app/declarations/hello_assets.did.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/app/helpers/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/app/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/app/models/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/app/router.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/app/routes/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/app/routes/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/app/styles/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/app/templates/application.hbs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/app/templates/index.hbs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/config/ember-cli-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/config/environment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/config/optional-features.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/config/targets.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/dummy/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/helpers/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/integration/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test-helper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/initializers/dfinity-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/services/dfinity-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +110,7 @@
       <workItem from="1679345329114" duration="10294000" />
       <workItem from="1679372974282" duration="6397000" />
       <workItem from="1679428635756" duration="8946000" />
-      <workItem from="1679497088313" duration="270000" />
+      <workItem from="1679497088313" duration="1977000" />
     </task>
     <servers />
   </component>

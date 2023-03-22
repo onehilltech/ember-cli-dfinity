@@ -1,0 +1,9 @@
+{
+  "name": "ember-cli-dfinity",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^6.5.1"
+  }
+}
