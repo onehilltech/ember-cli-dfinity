@@ -55,7 +55,7 @@ const DfxEmberWebpackPlugin = require ('dfx-ember-webpack-plugin');
 ```
 
 Then, add the `DfxEmberWebpackPlugin` and `CopyPlugin` plugin to the `plugins` 
-setting definition as shown below.
+definition as shown below.
 
 ```javascript
   plugins: [
