@@ -27,9 +27,9 @@ class DfxEmberWebpackPlugin {
           if (fs.pathExistsSync (emberCliConfig)) {
             console.debug (`${canisterName} is an EmberJS frontend`);
 
-            const outputDir = path.dirname (entrypoint).replace (`src/${canisterName}/`, '');
+            const outputDir = path.dirname (path.resolve (this.context, entrypoint));
             const emberRoot = path.resolve (path.dirname (emberCliConfig));
-            const args = ['b', `--environment=${process.env.NODE_ENV || 'development'}`, `--output-path=${outputDir}/`];
+            const args = ['b', `--environment=${process.env.NODE_ENV || 'development'}`, `--output-path=${outputDir}`];
 
             const options = {
               cwd: emberRoot,
@@ -40,7 +40,7 @@ class DfxEmberWebpackPlugin {
             require ('child_process').spawnSync ('ember', args, options);
 
             // Last, copy the generate assets the canister under $DFX_ROOT/dist.
-            const srcPath = path.resolve (emberRoot, outputDir, 'assets');
+            const srcPath = path.resolve (outputDir, 'assets');
             const outputPath = path.resolve (this.context, 'dist', canisterName, 'assets');
 
             if (fs.pathExistsSync (outputPath)) {
