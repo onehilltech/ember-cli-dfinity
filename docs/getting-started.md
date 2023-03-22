@@ -60,6 +60,7 @@ remove any accidental complexities with building the frontend.
     // DfxEmberWebpackPlugin replaces HtmlWebpackPlugin.
     new DfxEmberWebpackPlugin ({ context: __dirname }),
    
+    // ...
   ]
 ```
 
