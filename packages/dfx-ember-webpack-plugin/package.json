@@ -1,6 +1,6 @@
 {
   "name": "dfx-ember-webpack-plugin",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "private": false,
   "description": "Webpack plugin for compiling an EmberJS frontend for the Internet Computer",
   "main": "lib/index.js",
