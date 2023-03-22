@@ -15,6 +15,7 @@ module.exports = {
 
   locals (options) {
     return {
+      declaration: options.declaration,
       hasDeclaration: options.declaration !== undefined
     };
   },

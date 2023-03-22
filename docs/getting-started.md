@@ -65,13 +65,18 @@ Then, add the plugin as the first plugin in the `plugins` setting definition.
       cache: false,
     }),
     // ...
+
+    // The CopyPlugin must appear after the DfxEmberWebpackPlugin and HtmlWebpackPlugin.
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.join(__dirname, "src", frontendDirectory, "dist", "assets"),
+          to: path.join(__dirname, "dist", frontendDirectory, "assets"),
+        },
+      ],
+    }),
   ]
 ```
-
-Last, update the `frontend_entry` definition to the following. More specifically, you are
-changing the second `src` to `dist`.
-
-    const frontend_entry = path.join("src", frontendDirectory, "dist", "index.html");
 
 We can now start the dfx network and build the canisters. You can even deploy the canisters,
 but the frontend is not really connected to the backend yet.
@@ -134,7 +139,7 @@ export default class IndexController extends Controller {
   greeting;
 
   // Bind to the hello actor using the default canister and agent.
-  @actor
+  @actor ({ canister: 'hello_backend' })
   hello;
 
   @action
@@ -146,3 +151,17 @@ export default class IndexController extends Controller {
   }
 }
 ```
+
+Last, let's generate the actor object that is injected by the `@actor` decorator.
+
+    ember g dfx:actor hello --declaration hello_backend
+
+Build and deploy the project again.
+
+    dfx build
+    dfx deploy
+
+You should now see the input asking for a name. Input a name, click submit, and 
+see the greeting.
+
+Happy Coding!

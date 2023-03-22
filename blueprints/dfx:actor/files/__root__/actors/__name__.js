@@ -1,6 +1,6 @@
 <% if (hasDeclaration) { %>
 import { actorFromIdlFactory } from 'ember-cli-dfinity';
-import { idlFactory } from '../declarations/<%= dasherizedModuleName %>.did';
+import { idlFactory } from '../declarations/<%= declaration %>.did';
 
 export default actorFromIdlFactory (idlFactory, '<%= classifiedModuleName %>Actor');
 <% } else { %>
