@@ -15,21 +15,21 @@ class DfxEmberWebpackPlugin {
     // webpack, but the variables not passed to this compiler.
 
     compiler.hooks.compile.tap ('DfxEmberWebpackPlugin', () => {
-      const dfx = require (path.resolve (this.context, 'dfx.json'));
-      const {canisters} = dfx;
+      const { canisters } = require (path.resolve (this.context, 'dfx.json'));
 
       forEach (canisters, (canister, canisterName) => {
         const { frontend } = canister;
 
         if (!!frontend) {
+          const { entrypoint } = frontend;
           const emberCliConfig = path.resolve (this.context, 'src', canisterName, 'ember-cli-build.js');
 
           if (fs.pathExistsSync (emberCliConfig)) {
-            // Build the EmberJS application.
             console.debug (`${canisterName} is an EmberJS frontend`);
 
+            const outputDir = path.dirname (entrypoint).replace (`src/${canisterName}/`, '');
             const emberRoot = path.resolve (path.dirname (emberCliConfig));
-            const args = ['b', `--environment=${process.env.NODE_ENV || 'development'}`, `--output-path=src/`];
+            const args = ['b', `--environment=${process.env.NODE_ENV || 'development'}`, `--output-path=${outputDir}/`];
 
             const options = {
               cwd: emberRoot,
@@ -39,8 +39,8 @@ class DfxEmberWebpackPlugin {
 
             require ('child_process').spawnSync ('ember', args, options);
 
-            // Copy the generated assets to the corresponding canister under $DFX_ROOT/dist.
-            const srcPath = path.resolve (emberRoot, 'src/assets');
+            // Last, copy the generate assets the canister under $DFX_ROOT/dist.
+            const srcPath = path.resolve (emberRoot, outputDir, 'assets');
             const outputPath = path.resolve (this.context, 'dist', canisterName, 'assets');
 
             if (fs.pathExistsSync (outputPath)) {

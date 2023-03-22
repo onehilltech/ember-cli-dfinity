@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fdbe049b-97c3-48fe-8fcd-c7db8ae96c70" name="Changes" comment="d">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dfx-ember-webpack-plugin/lib/dfx-ember-webpack-plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/dfx-ember-webpack-plugin/lib/dfx-ember-webpack-plugin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/blueprints/ember-cli-dfinity/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/blueprints/ember-cli-dfinity/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/dummy/app/actors" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.ember-template-lint" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.ember-template-lint" value="$PROJECT_DIR$/node_modules/ember-template-lint" />
@@ -40,10 +42,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/tests/dummy/app/actors" />
       <recent name="$PROJECT_DIR$/addon/-lib/decorators" />
       <recent name="$PROJECT_DIR$/tests/dummy/app" />
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/blueprints/ember-cli-dfinity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -110,7 +112,7 @@
       <workItem from="1679345329114" duration="10294000" />
       <workItem from="1679372974282" duration="6397000" />
       <workItem from="1679428635756" duration="8946000" />
-      <workItem from="1679497088313" duration="1977000" />
+      <workItem from="1679497088313" duration="3514000" />
     </task>
     <servers />
   </component>
