@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fdbe049b-97c3-48fe-8fcd-c7db8ae96c70" name="Changes" comment="d">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/dfx-ember-webpack-plugin/lib/dfx-ember-webpack-plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/dfx-ember-webpack-plugin/lib/dfx-ember-webpack-plugin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/getting-started.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/getting-started.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +111,7 @@
       <workItem from="1679345329114" duration="10294000" />
       <workItem from="1679372974282" duration="6397000" />
       <workItem from="1679428635756" duration="8946000" />
-      <workItem from="1679497088313" duration="6213000" />
+      <workItem from="1679497088313" duration="6377000" />
     </task>
     <servers />
   </component>

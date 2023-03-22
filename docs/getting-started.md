@@ -45,24 +45,21 @@ Import the `DfxEmberWebpackPlugin` from `dfx-ember-webpack-plugin` at the top of
 ```javascript
 const path = require("path");
 const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 const DfxEmberWebpackPlugin = require ('dfx-ember-webpack-plugin');
 ```
 
-Then, add the `DfxEmberWebpackPlugin` plugin to the `plugins` declaration as shown below.
-The `DfxEmberWebpackPlugin` must come before the `HtmlWebpackPlugin`.
+Then, replace the `HtmlWebpackPlugin` with the `DfxEmberWebpackPlugin` plugin to the `plugins`
+as shown below. The `DfxEmberWebpackPlugin` manages its own instance of `HtmlWebpackPlugin` to 
+remove any accidental complexities with building the frontend.
 
 ```javascript
   plugins: [
-    // The EmberJS webpack plugin must come before HtmlWebpackPlugin.
+    // DfxEmberWebpackPlugin replaces HtmlWebpackPlugin.
     new DfxEmberWebpackPlugin ({ context: __dirname }),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, frontend_entry),
-      cache: false,
-    })
+   
   ]
 ```
 
