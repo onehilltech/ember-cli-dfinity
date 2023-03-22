@@ -31,8 +31,8 @@ sure you type `y` for yes.
 
     ? Overwrite ember-cli-build.js? (yndH) y
 
-If you do not overwrite `ember-cli-build.js`, then you need to manually instantiate 
-a `DfxEmberApp` class in `ember-cli-build.js`. The last step in project setup is to install 
+If you do not overwrite `ember-cli-build.js`, then you need to manually instantiate a `DfxEmberApp` 
+class in `ember-cli-build.js`. The last step in project setup is to install 
 `dfx-ember-webpack-plugin` in `$DFX_ROOT` and update the `webpack.config.js`.
 
 > Do not install `dfx-ember-webpack-plugin` in the EmberJS project.
@@ -52,8 +52,8 @@ const CopyPlugin = require("copy-webpack-plugin");
 const DfxEmberWebpackPlugin = require ('dfx-ember-webpack-plugin');
 ```
 
-Then, add the `DfxEmberWebpackPlugin` and `CopyPlugin` plugin to the `plugins` 
-definition as shown below.
+Then, add the `DfxEmberWebpackPlugin` plugin to the `plugins` declaration as shown below.
+The `DfxEmberWebpackPlugin` must come before the `HtmlWebpackPlugin`.
 
 ```javascript
   plugins: [
@@ -62,18 +62,7 @@ definition as shown below.
     new HtmlWebpackPlugin({
       template: path.join(__dirname, frontend_entry),
       cache: false,
-    }),
-    // ...
-
-    // The CopyPlugin must appear after the DfxEmberWebpackPlugin and HtmlWebpackPlugin.
-    new CopyPlugin({
-      patterns: [
-        {
-          from: path.join(__dirname, "src", frontendDirectory, "dist", "assets"),
-          to: path.join(__dirname, "dist", frontendDirectory, "assets"),
-        },
-      ],
-    }),
+    })
   ]
 ```
 
@@ -94,15 +83,15 @@ this example will call the `greet` function on the `hello` actor.
 
 First, we need to create a route for this page.
 
-> All `ember` commands must be executed from a directory with an EmberJS application. In this
-> example, we must run the `ember` command from `src/hello_frontend`. 
+> All `ember` commands must be executed from the root directory of an EmberJS application. In 
+> this example, we must run the `ember` command from `src/hello_frontend`. 
 
     ember g route index
 
 This command will generate the index route for the application. Open `app/templates/index`, and
 add the following code.
 
-```html
+```handlebars
 <form {{on "submit" this.submit}}>
   <label for="name">Enter your name: &nbsp;</label>
 
@@ -116,12 +105,12 @@ add the following code.
 <section>{{this.greeting}}</section>
 ```
 
-We then need to generate a controller for this route. The controller will contain the dynamic logic
-for this corresponding route.
+We then need to generate a controller for the index route. The controller will contain the dynamic 
+logic for this corresponding route.
 
     ember g controller index
 
-Replace the generated controller's codes to the following.
+Replace the generated controller code with the following.
 
 ```javascript
 import Controller from '@ember/controller';
@@ -137,7 +126,7 @@ export default class IndexController extends Controller {
   @tracked
   greeting;
 
-  // Bind to the hello actor using the default canister and agent.
+  // Bind to the hello actor deployed to the hello_backend canister using the default agent.
   @actor ({ canister: 'hello_backend' })
   hello;
 
@@ -151,16 +140,17 @@ export default class IndexController extends Controller {
 }
 ```
 
-Last, let's generate the actor object that is injected by the `@actor` decorator.
+Last, we need to generate the actor object that is injected by the `@actor` decorator.
 
     ember g dfx:actor hello --declaration hello_backend
 
-Build and deploy the project again.
+This will create the files `app/actors/hello.js` and `app/declarations/hello_backend.js`. We can
+now build and deploy the project again.
 
     dfx build
     dfx deploy
 
-You should now see the input asking for a name. Input a name, click submit, and 
-see the greeting.
+Open the frontend url in your browser. You should now see the input asking for a name. Input 
+a name, click submit, and see the greeting.
 
 Happy Coding!

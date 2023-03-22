@@ -43,11 +43,11 @@ module.exports = Blueprint.extend({
       }
 
       canister.frontend = {
-        entrypoint: `src/${canisterName}/src/index.html`,
+        entrypoint: `src/${canisterName}/dist/index.html`,
       };
 
       canister.source = [
-        `src/${canisterName}/src/assets`,
+        `src/${canisterName}/dist/assets`,
         `dist/${canisterName}/`,
       ];
 
