@@ -13,8 +13,8 @@ project for more details.
 Getting Started
 ------------------------------------------------------------------------------
 
-See the [Getting Started] tutorial to quickly learn how to use the EmberJS
-add-on in your project.
+See the [Getting Started](https://github.com/onehilltech/ember-cli-dfinity/blob/main/docs/getting-started.md) tutorial 
+to quickly learn how to use the EmberJS add-on in your project.
 
 License
 ------------------------------------------------------------------------------
