@@ -7,7 +7,8 @@ following projects:
 * **ember-cli-dfinity** - EmberJS add-on for the Internet Computer.
 * **dfx-ember-webpack-plugin** - Webpack plugin for building EmberJS application 
 
-See the `README.md` file in each project for more details.
+Each project is located under the `packages/` directory. See the `README.md` file in each
+project for more details.
 
 
 License
