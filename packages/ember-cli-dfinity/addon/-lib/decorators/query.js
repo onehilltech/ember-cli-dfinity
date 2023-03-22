@@ -16,4 +16,4 @@
 
 import { createFunctionDecorator } from './function';
 
-export default createFunctionDecorator ([]);
+export default createFunctionDecorator([]);

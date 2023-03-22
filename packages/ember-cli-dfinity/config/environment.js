@@ -3,7 +3,7 @@ const path = require('path');
 
 const isCompilingDfx = !!process.env.DFX_ROOT;
 
-function defaultHttpProtocol (network) {
+function defaultHttpProtocol(network) {
   return network === 'local' ? 'http://' : 'https://';
 }
 
@@ -31,8 +31,7 @@ function requireCanistersConfig(network) {
 function requireCanisters(network) {
   try {
     return requireCanistersConfig(network);
-  }
-  catch (err) {
+  } catch (err) {
     return {};
   }
 }
@@ -42,9 +41,9 @@ function requireCanisters(network) {
  *
  * @return {Promise<void> | Promise<any>}
  */
-function requireDfxConfig () {
+function requireDfxConfig() {
   const dfxPath = path.resolve(process.env.DFX_ROOT, 'dfx.json');
-  return require (dfxPath);
+  return require(dfxPath);
 }
 
 /**
@@ -52,16 +51,16 @@ function requireDfxConfig () {
  *
  * @param network
  */
-function requireAgents (network) {
-  const dfxConfig = requireDfxConfig ();
+function requireAgents(network) {
+  const dfxConfig = requireDfxConfig();
   const networks = dfxConfig.networks || {};
   const agents = {};
 
-  forOwn (networks, (config, network) => {
+  forOwn(networks, (config, network) => {
     agents[network] = {
-      host: `${defaultHttpProtocol (network)}${config.bind}`
-    }
-  })
+      host: `${defaultHttpProtocol(network)}${config.bind}`,
+    };
+  });
 
   return agents;
 }
@@ -71,12 +70,12 @@ function requireAgents (network) {
  * @param registry
  * @param network
  */
-function registerAgents (registry, network) {
-  const agents = requireAgents (network);
+function registerAgents(registry, network) {
+  const agents = requireAgents(network);
 
-  forOwn (agents, (config, name) => {
+  forOwn(agents, (config, name) => {
     if (!registry[name]) {
-      registry[name] = config
+      registry[name] = config;
     }
   });
 }
@@ -121,14 +120,15 @@ module.exports = function (environment, config) {
     config.dfx.agents = {};
   }
 
-  const network = process.env.DFX_NETWORK || (environment === 'production' ? 'ic' : 'local');
+  const network =
+    process.env.DFX_NETWORK || (environment === 'production' ? 'ic' : 'local');
 
   if (!config.dfx.defaultAgent) {
     config.dfx.defaultAgent = network;
   }
 
-  registerAgents (config.dfx.agents, network);
-  registerCanisters (config.dfx.canisters, network);
+  registerAgents(config.dfx.agents, network);
+  registerCanisters(config.dfx.canisters, network);
 
   return config;
 };

@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-const decorator = require ('@onehilltech/decorator');
-const { isArray } = require ('lodash');
+const decorator = require('@onehilltech/decorator');
+const { isArray } = require('lodash');
 
-function actorFunction (target, key, descriptor, params) {
+function actorFunction(target, key, descriptor, params) {
   let [type, input, output] = params;
 
-  if (!isArray (input)) {
+  if (!isArray(input)) {
     input = input !== undefined ? [input] : [];
   }
 
-  if (!isArray (output)) {
+  if (!isArray(output)) {
     output = output !== undefined ? [output] : [];
   }
 
@@ -34,9 +34,9 @@ function actorFunction (target, key, descriptor, params) {
   // Define this action on the actor. This will allow the actor to create an
   // instance of itself.
   const definition = [input, output, type];
-  target.defineAction (key, definition);
+  target.defineAction(key, definition);
 
-  descriptor.enumerable = true
+  descriptor.enumerable = true;
   descriptor.writable = false;
   descriptor.configurable = false;
   descriptor.value = definition;
@@ -44,10 +44,10 @@ function actorFunction (target, key, descriptor, params) {
   return descriptor;
 }
 
-export default decorator (actorFunction);
+export default decorator(actorFunction);
 
-export function createFunctionDecorator (type) {
-  return decorator (function (target, key, descriptor, params) {
-    return actorFunction (target, key, descriptor, [type, ...params]);
+export function createFunctionDecorator(type) {
+  return decorator(function (target, key, descriptor, params) {
+    return actorFunction(target, key, descriptor, [type, ...params]);
   });
-};
+}

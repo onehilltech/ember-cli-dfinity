@@ -7,7 +7,12 @@ import { guidFor } from '@ember/object/internals';
 
 import { isString } from 'lodash';
 
-export default decorator(function actorDecorator (target, name, descriptor, params) {
+export default decorator(function actorDecorator(
+  target,
+  name,
+  descriptor,
+  params
+) {
   delete descriptor.initializer;
   delete descriptor.writable;
   delete descriptor.configurable;
@@ -15,7 +20,7 @@ export default decorator(function actorDecorator (target, name, descriptor, para
   let [lookupName, options] = params;
 
   if (isNone(options)) {
-    options = { };
+    options = {};
   }
 
   if (isPresent(lookupName)) {
@@ -39,11 +44,8 @@ export default decorator(function actorDecorator (target, name, descriptor, para
     const owner = getOwner(this);
 
     if (isEmpty(canisterId)) {
-      const ENV = owner.resolveRegistration ('config:environment');
-      const {
-        defaultCanister,
-        defaultCanisterId
-      } = (ENV.dfx || {});
+      const ENV = owner.resolveRegistration('config:environment');
+      const { defaultCanister, defaultCanisterId } = ENV.dfx || {};
 
       // Set the canister id to the default canister id from the configuration file. If we still
       // do not have a canister id for the actor, lets check for the named canister. We can either
@@ -51,14 +53,19 @@ export default decorator(function actorDecorator (target, name, descriptor, para
 
       canisterId = defaultCanisterId;
 
-      if (isEmpty (canisterId)) {
-        canisterId = owner.lookup('service:dfinity').canisterFor (canister || defaultCanister);
+      if (isEmpty(canisterId)) {
+        canisterId = owner
+          .lookup('service:dfinity')
+          .canisterFor(canister || defaultCanister);
       }
 
-      assert ('Actor has no canister. You must define the canister or canisterId property in @actor, or set defaultCanister or defaultCanisterId in config/environment.js', !!canisterId);
+      assert(
+        'Actor has no canister. You must define the canister or canisterId property in @actor, or set defaultCanister or defaultCanisterId in config/environment.js',
+        !!canisterId
+      );
     }
 
-    if (isEmpty (instanceKey)) {
+    if (isEmpty(instanceKey)) {
       instanceKey = `${typename}@${canisterId}`;
     }
 
@@ -75,8 +82,8 @@ export default decorator(function actorDecorator (target, name, descriptor, para
     const actor = owner.lookup(typename);
     assert(`The actor with name "${typename}" does not exist.`, !!actor);
 
-    const createOptions = Object.assign ({}, options, { canisterId });
-    instance = actor.createInstance (createOptions);
+    const createOptions = Object.assign({}, options, { canisterId });
+    instance = actor.createInstance(createOptions);
     owner.register(instanceKey, instance, { instantiate: false });
 
     return instance;

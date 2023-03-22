@@ -58,7 +58,10 @@ export default class DfinityService extends Service {
     const ENV = getOwner(this).resolveRegistration('config:environment');
     const canisterId = get(ENV, `dfx.canisters.${name}`);
 
-    assert (`The canisterId for ${name} does not exist. Please add dfx.canisters.${name} to config/environment.js.`, !!canisterId);
+    assert(
+      `The canisterId for ${name} does not exist. Please add dfx.canisters.${name} to config/environment.js.`,
+      !!canisterId
+    );
 
     return canisterId;
   }
