@@ -38,14 +38,16 @@ module.exports = Blueprint.extend({
       // Set the default configuration for the canister if it already does not
       // exists in the configuration file.
 
-      if (canister.type !== 'assets') canister.type = 'assets';
+      if (canister.type !== 'assets') {
+        canister.type = 'assets';
+      }
 
       canister.frontend = {
-        entrypoint: `src/${canisterName}/dist/index.html`,
+        entrypoint: `src/${canisterName}/src/index.html`,
       };
 
       canister.source = [
-        `src/${canisterName}/dist/assets`,
+        `src/${canisterName}/src/assets`,
         `dist/${canisterName}/`,
       ];
 
