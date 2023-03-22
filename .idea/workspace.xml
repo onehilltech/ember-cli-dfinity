@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fdbe049b-97c3-48fe-8fcd-c7db8ae96c70" name="Changes" comment="d">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/actor.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/actor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/decorators/actor.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/decorators/actor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/decorators/function.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/decorators/function.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/decorators/query.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/decorators/query.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/decorators/update.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/decorators/update.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/services/dfinity.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/services/dfinity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/blueprints/dfx:actor/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/blueprints/dfx:actor/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/config/environment.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/config/environment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/tests/dummy/app/actors/hello-manual.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/tests/dummy/app/actors/hello-manual.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/dfx-ember-webpack-plugin/lib/dfx-ember-webpack-plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/dfx-ember-webpack-plugin/lib/dfx-ember-webpack-plugin.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +111,7 @@
       <workItem from="1679345329114" duration="10294000" />
       <workItem from="1679372974282" duration="6397000" />
       <workItem from="1679428635756" duration="8946000" />
-      <workItem from="1679497088313" duration="6772000" />
+      <workItem from="1679497088313" duration="7340000" />
     </task>
     <servers />
   </component>

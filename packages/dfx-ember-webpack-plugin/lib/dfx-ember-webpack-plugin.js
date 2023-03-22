@@ -1,4 +1,4 @@
-const { forEach } = require ('lodash');
+const { forEach, merge } = require ('lodash');
 const fs = require ('fs-extra');
 const path = require ('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -7,9 +7,6 @@ const WEBPACK_PLUGIN_NAME = 'DfxEmberWebpackPlugin';
 
 /**
  * @class DfxEmberWebpackPlugin
- *
- * The plugin for compiling an EmberJS frontend application. This plugin manages the
- * HtmlWebpackPlugin utilized when building a native html frontend.
  */
 class DfxEmberWebpackPlugin {
   constructor (options = {}) {
@@ -40,7 +37,7 @@ class DfxEmberWebpackPlugin {
       // We found the frontend project. Instantiate a new HtmlWebpackPlugin since we need
       // to apply it after our plugin.
       this._htmlPlugin = new HtmlWebpackPlugin ({
-        template: path.join(__dirname, this._frontend.entrypoint),
+        template: path.join(this.context, this._frontend.entrypoint),
         cache: false,
       });
     }
@@ -52,6 +49,20 @@ class DfxEmberWebpackPlugin {
    * @param compiler
    */
   apply (compiler) {
+    // Manually set the entry for index via the frontend entrypoint. If we do not set it
+    // here, then we have to rely on the developer setting the correct value. We override
+    // the value here because it needs to occur before the initialize() hook.
+
+    merge (compiler.options, {
+      entry: {
+        index: {
+          import: [
+            path.join(this.context, this._frontend.entrypoint).replace(/\.html$/, '.js')
+          ]
+        }
+      }
+    });
+
     compiler.hooks.compile.tap (WEBPACK_PLUGIN_NAME, () => {
       const { entrypoint } = this._frontend;
       const emberCliConfig = path.resolve (this.context, 'src', this._frontendCanisterName, 'ember-cli-build.js');
@@ -93,7 +104,6 @@ class DfxEmberWebpackPlugin {
   /// The frontend canister.
   _frontend;
 
-  /// Name of the frontend canister.
   _frontendCanisterName;
 }
 
