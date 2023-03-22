@@ -32,10 +32,8 @@ sure you type `y` for yes.
     ? Overwrite ember-cli-build.js? (yndH) y
 
 If you do not overwrite `ember-cli-build.js`, then you need to manually instantiate 
-a `DfxEmberApp` class in `ember-cli-build.js`.
-
-The last step in project setup is to install `dfx-ember-webpack-plugin` in `$DFX_ROOT` and
-update the `webpack.config.js`.
+a `DfxEmberApp` class in `ember-cli-build.js`. The last step in project setup is to install 
+`dfx-ember-webpack-plugin` in `$DFX_ROOT` and update the `webpack.config.js`.
 
 > Do not install `dfx-ember-webpack-plugin` in the EmberJS application project.
 
