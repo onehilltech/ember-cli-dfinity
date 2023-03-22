@@ -10,6 +10,11 @@ following projects:
 Each project is located under the `packages/` directory. See the `README.md` file in each
 project for more details.
 
+Getting Started
+------------------------------------------------------------------------------
+
+See the [Getting Started] tutorial to quickly learn how to use the EmberJS
+add-on in your project.
 
 License
 ------------------------------------------------------------------------------
