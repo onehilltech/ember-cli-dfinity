@@ -21,7 +21,7 @@ we are going to replace the native html with an EmberJS application.
 
 We can now generate the `hello_frontend` EmberJS application without any problems.
 
-    ember new hello_frontend
+    ember new hello_frontend --no-welcome --skit-git
 
 Next, we need to install the `ember-cli-dfinity` addon.
 
