@@ -140,7 +140,9 @@ export default class IndexController extends Controller {
 }
 ```
 
-Last, we need to generate the actor object that is injected by the `@actor` decorator.
+Last, we need to generate the actor object that is injected by the `@actor` decorator. You would
+typically do this before implementing code that uses the actor. But, we are doing at this step of
+the tutorial for flow reasons.
 
     ember g dfx:actor hello --declaration hello_backend
 
