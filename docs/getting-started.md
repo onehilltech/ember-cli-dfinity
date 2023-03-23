@@ -4,6 +4,8 @@ Getting Started
 This getting started guide walks you through the steps for using `ember-cli-dfinity`
 in your DApp. We use the `hello` project as our running exmaple.
 
+> You must install [ember-cli](https://cli.emberjs.com/release/) to use EmberJS.
+
 Project setup
 --------------------------------------
 
