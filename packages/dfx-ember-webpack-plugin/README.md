@@ -26,7 +26,7 @@ module.exports = {
   // ... 
   
   plugins: [
-    // This plugin must come before the HtmlWebpackPlugin plugin.
+    // This plugin replaces the HtmlWebpackPlugin plugin.
     new DfxEmberWebpackPlugin ({ context: __dirname }),
 
     // other plugins
