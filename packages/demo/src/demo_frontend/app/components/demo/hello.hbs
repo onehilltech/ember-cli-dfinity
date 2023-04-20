@@ -1,6 +1,9 @@
-<MdcForm @validity={{this.validity}} @submit={{this.submit}}>
-  <MdcTextfield @style="outlined" @label="Enter a name here" required="true" @value={{this.name}} />
-  <MdcButton type="submit" @label="Submit" @style="unelevated" disabled={{this.isSubmitButtonDisabled}} />
-</MdcForm>
+<div class="demo-hello">
+  <MdcForm @validity={{this.validity}} @submit={{this.submit}}>
+    <MdcTextfield @style="outlined" @label="Enter a name here" required="true" @value={{this.name}} />
 
-<p>{{this.greeting}}</p>
+    <MdcButton type="submit" @label="Submit" @style="unelevated" disabled={{this.isSubmitButtonDisabled}} />
+  </MdcForm>
+
+  <div class="demo-hello__greeting"><b>Greeting:</b> {{this.greeting}}</div>
+</div>

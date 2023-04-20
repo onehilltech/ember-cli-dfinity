@@ -1,0 +1,19 @@
+// route: application
+
+@use "@material/theme" as theme;
+
+.route__application {
+  b {
+    font-weight: 500;
+  }
+
+  a {
+    text-decoration: none;
+    @include theme.prop(color, primary);
+    font-weight: 500;
+  }
+
+  .main-content {
+    padding: 24px;
+  }
+}

@@ -1,0 +1,13 @@
+// route: demo/hello
+
+.demo-hello {
+  .mdc-button {
+    &[type="submit"] {
+      margin-top: 24px;
+    }
+  }
+
+  &__greeting {
+    padding: 24px 0;
+  }
+}

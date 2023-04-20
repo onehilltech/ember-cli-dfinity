@@ -75,17 +75,20 @@
   function _initializerWarningHelper(descriptor, context) { throw new Error('Decorating class property failed. Please ensure that ' + 'proposal-class-properties is enabled and runs after the decorators transform.'); }
   const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
   /*
+    <div class="demo-hello">
     <MdcForm @validity={{this.validity}} @submit={{this.submit}}>
-    <MdcTextfield @style="outlined" @label="Enter a name here" required="true" @value={{this.name}} />
-    <MdcButton type="submit" @label="Submit" @style="unelevated" disabled={{this.isSubmitButtonDisabled}} />
-  </MdcForm>
+      <MdcTextfield @style="outlined" @label="Enter a name here" required="true" @value={{this.name}} />
   
-  <p>{{this.greeting}}</p>
+      <MdcButton type="submit" @label="Submit" @style="unelevated" disabled={{this.isSubmitButtonDisabled}} />
+    </MdcForm>
+  
+    <div class="demo-hello__greeting"><b>Greeting:</b> {{this.greeting}}</div>
+  </div>
   
   */
   {
-    "id": "n32MaTD2",
-    "block": "[[[8,[39,0],null,[[\"@validity\",\"@submit\"],[[30,0,[\"validity\"]],[30,0,[\"submit\"]]]],[[\"default\"],[[[[1,\"\\n  \"],[8,[39,1],[[24,\"required\",\"true\"]],[[\"@style\",\"@label\",\"@value\"],[\"outlined\",\"Enter a name here\",[30,0,[\"name\"]]]],null],[1,\"\\n  \"],[8,[39,2],[[16,\"disabled\",[30,0,[\"isSubmitButtonDisabled\"]]],[24,4,\"submit\"]],[[\"@label\",\"@style\"],[\"Submit\",\"unelevated\"]],null],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[10,2],[12],[1,[30,0,[\"greeting\"]]],[13],[1,\"\\n\"]],[],false,[\"mdc-form\",\"mdc-textfield\",\"mdc-button\"]]",
+    "id": "hlCbdVMy",
+    "block": "[[[10,0],[14,0,\"demo-hello\"],[12],[1,\"\\n  \"],[8,[39,0],null,[[\"@validity\",\"@submit\"],[[30,0,[\"validity\"]],[30,0,[\"submit\"]]]],[[\"default\"],[[[[1,\"\\n    \"],[8,[39,1],[[24,\"required\",\"true\"]],[[\"@style\",\"@label\",\"@value\"],[\"outlined\",\"Enter a name here\",[30,0,[\"name\"]]]],null],[1,\"\\n\\n    \"],[8,[39,2],[[16,\"disabled\",[30,0,[\"isSubmitButtonDisabled\"]]],[24,4,\"submit\"]],[[\"@label\",\"@style\"],[\"Submit\",\"unelevated\"]],null],[1,\"\\n  \"]],[]]]]],[1,\"\\n\\n  \"],[10,0],[14,0,\"demo-hello__greeting\"],[12],[10,\"b\"],[12],[1,\"Greeting:\"],[13],[1,\" \"],[1,[30,0,[\"greeting\"]]],[13],[1,\"\\n\"],[13],[1,\"\\n\"]],[],false,[\"mdc-form\",\"mdc-textfield\",\"mdc-button\"]]",
     "moduleName": "demo-frontend/components/demo/hello.hbs",
     "isStrictMode": false
   });
@@ -1139,6 +1142,16 @@
     });
   });
 });
+;define("demo-frontend/routes/main", ["exports", "@ember/routing/route"], function (_exports, _route) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  class MainRoute extends _route.default {}
+  _exports.default = MainRoute;
+});
 ;define("demo-frontend/routes/main/details", ["exports", "@ember/routing/route"], function (_exports, _route) {
   "use strict";
 
@@ -1337,6 +1350,21 @@
   });
   _exports.default = _default;
 });
+;define("demo-frontend/templates/main", ["exports", "@ember/template-factory"], function (_exports, _templateFactory) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  var _default = (0, _templateFactory.createTemplateFactory)({
+    "id": "HxSu+vuH",
+    "block": "[[[1,[28,[35,0],[\"ember-cli-dfinity\"],null]],[1,\"\\n\"],[46,[28,[37,2],null,null],null,null,null],[1,\"\\n\"]],[],false,[\"page-title\",\"component\",\"-outlet\"]]",
+    "moduleName": "demo-frontend/templates/main.hbs",
+    "isStrictMode": false
+  });
+  _exports.default = _default;
+});
 ;define("demo-frontend/templates/main/details", ["exports", "@ember/template-factory"], function (_exports, _templateFactory) {
   "use strict";
 
@@ -1345,8 +1373,8 @@
   });
   _exports.default = void 0;
   var _default = (0, _templateFactory.createTemplateFactory)({
-    "id": "bQCH8nCZ",
-    "block": "[[[1,[28,[35,0],[\"How it works\"],null]],[1,\"\\n\\n\"],[8,[39,1],null,[[\"@route\"],[\"main.index\"]],[[\"default\"],[[[[1,\"Go to index\"]],[]]]]]],[],false,[\"page-title\",\"link-to\"]]",
+    "id": "irizRHoV",
+    "block": "[[[1,[28,[35,0],[\"How it works\"],null]],[1,\"\\n\\n\"],[8,[39,1],null,[[\"@fixed\"],[\"true\"]],[[\"default\"],[[[[1,\"\\n  \"],[8,[39,2],null,null,[[\"default\"],[[[[1,\"\\n    \"],[8,[39,3],null,null,[[\"default\"],[[[[1,\"\\n      \"],[8,[39,4],null,[[\"@route\"],[\"main.index\"]],null],[1,\"\\n      \"],[8,[39,5],null,null,[[\"default\"],[[[[1,\"How it works\"]],[]]]]],[1,\"\\n    \"]],[]]]]],[1,\"\\n  \"]],[]]]]],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[11,0],[4,[38,6],null,null],[12],[1,\"\\n\\n\"],[13]],[],false,[\"page-title\",\"mdc-top-app-bar\",\"mdc-top-app-bar-row\",\"mdc-top-app-bar-section\",\"mdc-top-app-bar-navigate-up-to\",\"mdc-top-app-bar-title\",\"mdc-top-app-bar-fixed-adjustment\"]]",
     "moduleName": "demo-frontend/templates/main/details.hbs",
     "isStrictMode": false
   });
@@ -1360,8 +1388,8 @@
   });
   _exports.default = void 0;
   var _default = (0, _templateFactory.createTemplateFactory)({
-    "id": "3jn8u1Lk",
-    "block": "[[[1,[28,[35,0],[\"Home\"],null]],[1,\"\\n\\n\"],[10,2],[12],[1,\"This page demonstrates the Hello, World example for the Internet Computer implemented\\n  in EmberJS using the \"],[10,3],[14,6,\"\"],[12],[1,\"ember-cli-dfinity\"],[13],[1,\" frontend library. Give it a try!\"],[13],[1,\"\\n\\n\"],[10,\"demo::Hello\"],[12],[13],[1,\"\\n\\n\"],[10,2],[12],[1,\"\\n  \"],[8,[39,1],null,[[\"@route\"],[\"main.details\"]],[[\"default\"],[[[[1,\"Go to details\"]],[]]]]],[1,\"\\n\"],[13],[1,\"\\n\"]],[],false,[\"page-title\",\"link-to\"]]",
+    "id": "J0QHCo7f",
+    "block": "[[[1,[28,[35,0],[\"Demo\"],null]],[1,\"\\n\\n\"],[8,[39,1],null,[[\"@fixed\"],[\"true\"]],[[\"default\"],[[[[1,\"\\n  \"],[8,[39,2],null,null,[[\"default\"],[[[[1,\"\\n    \"],[8,[39,3],null,null,[[\"default\"],[[[[1,\"\\n      \"],[8,[39,4],null,null,[[\"default\"],[[[[1,\"Demo\"]],[]]]]],[1,\"\\n    \"]],[]]]]],[1,\"\\n  \"]],[]]]]],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[11,0],[4,[38,5],null,null],[12],[1,\"\\n  \"],[10,0],[14,0,\"main-content\"],[12],[1,\"\\n    \"],[10,2],[12],[1,\"This page demonstrates the Hello, World example for the Internet Computer implemented\\n      in EmberJS using the \"],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-dfinity\"],[14,\"target\",\"_blank\"],[12],[1,\"ember-cli-dfinity\"],[13],[1,\" frontend\\n      library. Give it a try!\"],[13],[1,\"\\n\\n    \"],[8,[39,6],null,null,null],[1,\"\\n\\n    \"],[10,2],[12],[1,\"\\n      \"],[8,[39,7],null,[[\"@route\"],[\"main.details\"]],[[\"default\"],[[[[1,\"Learn more\"]],[]]]]],[1,\" about what makes this implementation different.\\n    \"],[13],[1,\"\\n  \"],[13],[1,\"\\n\"],[13],[1,\"\\n\\n\\n\"]],[],false,[\"page-title\",\"mdc-top-app-bar\",\"mdc-top-app-bar-row\",\"mdc-top-app-bar-section\",\"mdc-top-app-bar-title\",\"mdc-top-app-bar-fixed-adjustment\",\"demo/hello\",\"link-to\"]]",
     "moduleName": "demo-frontend/templates/main/index.hbs",
     "isStrictMode": false
   });
@@ -1442,7 +1470,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("demo-frontend/app")["default"].create({"name":"demo-frontend","version":"0.0.0+60cc4c65"});
+            require("demo-frontend/app")["default"].create({"name":"demo-frontend","version":"0.0.0+5136dd29"});
           }
         
 //# sourceMappingURL=demo-frontend.map

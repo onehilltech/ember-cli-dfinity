@@ -1,3 +1,14 @@
 {{page-title "How it works"}}
 
-<LinkTo @route="main.index">Go to index</LinkTo>
+<MdcTopAppBar @fixed="true">
+  <MdcTopAppBarRow>
+    <MdcTopAppBarSection>
+      <MdcTopAppBarNavigateUpTo @route="main.index" />
+      <MdcTopAppBarTitle>How it works</MdcTopAppBarTitle>
+    </MdcTopAppBarSection>
+  </MdcTopAppBarRow>
+</MdcTopAppBar>
+
+<div {{mdc-top-app-bar-fixed-adjustment}}>
+
+</div>

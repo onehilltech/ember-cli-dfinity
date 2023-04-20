@@ -1,10 +1,25 @@
-{{page-title "Home"}}
+{{page-title "Demo"}}
 
-<p>This page demonstrates the Hello, World example for the Internet Computer implemented
-  in EmberJS using the <a href="">ember-cli-dfinity</a> frontend library. Give it a try!</p>
+<MdcTopAppBar @fixed="true">
+  <MdcTopAppBarRow>
+    <MdcTopAppBarSection>
+      <MdcTopAppBarTitle>Demo</MdcTopAppBarTitle>
+    </MdcTopAppBarSection>
+  </MdcTopAppBarRow>
+</MdcTopAppBar>
 
-<demo::Hello />
+<div {{mdc-top-app-bar-fixed-adjustment}}>
+  <div class="main-content">
+    <p>This page demonstrates the Hello, World example for the Internet Computer implemented
+      in EmberJS using the <a href="https://github.com/onehilltech/ember-cli-dfinity" target="_blank">ember-cli-dfinity</a> frontend
+      library. Give it a try!</p>
 
-<p>
-  <LinkTo @route="main.details">Go to details</LinkTo>
-</p>
+    <Demo::Hello />
+
+    <p>
+      <LinkTo @route="main.details">Learn more</LinkTo> about what makes this implementation different.
+    </p>
+  </div>
+</div>
+
+

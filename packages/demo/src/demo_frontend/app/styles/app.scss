@@ -1,2 +1,15 @@
-
 @import "_styled";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: auto;
+
+  // This is the default padding on the body to account for the "status bar" on
+  // iOS devices. On non-iOS devices, this value will be 0.
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+}
