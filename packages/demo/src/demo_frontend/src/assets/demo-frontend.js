@@ -1343,8 +1343,8 @@
   });
   _exports.default = void 0;
   var _default = (0, _templateFactory.createTemplateFactory)({
-    "id": "Xl7b4Bpn",
-    "block": "[[[1,[28,[35,0],[\"ember-cli-dfinity\"],null]],[1,\"\\n\\n\"],[46,[28,[37,2],null,null],null,null,null]],[],false,[\"page-title\",\"component\",\"-outlet\"]]",
+    "id": "ZwcZSBRR",
+    "block": "[[[46,[28,[37,1],null,null],null,null,null]],[],false,[\"component\",\"-outlet\"]]",
     "moduleName": "demo-frontend/templates/application.hbs",
     "isStrictMode": false
   });
@@ -1388,8 +1388,8 @@
   });
   _exports.default = void 0;
   var _default = (0, _templateFactory.createTemplateFactory)({
-    "id": "J0QHCo7f",
-    "block": "[[[1,[28,[35,0],[\"Demo\"],null]],[1,\"\\n\\n\"],[8,[39,1],null,[[\"@fixed\"],[\"true\"]],[[\"default\"],[[[[1,\"\\n  \"],[8,[39,2],null,null,[[\"default\"],[[[[1,\"\\n    \"],[8,[39,3],null,null,[[\"default\"],[[[[1,\"\\n      \"],[8,[39,4],null,null,[[\"default\"],[[[[1,\"Demo\"]],[]]]]],[1,\"\\n    \"]],[]]]]],[1,\"\\n  \"]],[]]]]],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[11,0],[4,[38,5],null,null],[12],[1,\"\\n  \"],[10,0],[14,0,\"main-content\"],[12],[1,\"\\n    \"],[10,2],[12],[1,\"This page demonstrates the Hello, World example for the Internet Computer implemented\\n      in EmberJS using the \"],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-dfinity\"],[14,\"target\",\"_blank\"],[12],[1,\"ember-cli-dfinity\"],[13],[1,\" frontend\\n      library. Give it a try!\"],[13],[1,\"\\n\\n    \"],[8,[39,6],null,null,null],[1,\"\\n\\n    \"],[10,2],[12],[1,\"\\n      \"],[8,[39,7],null,[[\"@route\"],[\"main.details\"]],[[\"default\"],[[[[1,\"Learn more\"]],[]]]]],[1,\" about what makes this implementation different.\\n    \"],[13],[1,\"\\n  \"],[13],[1,\"\\n\"],[13],[1,\"\\n\\n\\n\"]],[],false,[\"page-title\",\"mdc-top-app-bar\",\"mdc-top-app-bar-row\",\"mdc-top-app-bar-section\",\"mdc-top-app-bar-title\",\"mdc-top-app-bar-fixed-adjustment\",\"demo/hello\",\"link-to\"]]",
+    "id": "s5NYkEex",
+    "block": "[[[1,[28,[35,0],[\"Demo\"],null]],[1,\"\\n\\n\"],[8,[39,1],null,[[\"@fixed\"],[\"true\"]],[[\"default\"],[[[[1,\"\\n  \"],[8,[39,2],null,null,[[\"default\"],[[[[1,\"\\n    \"],[8,[39,3],null,null,[[\"default\"],[[[[1,\"\\n      \"],[8,[39,4],null,null,[[\"default\"],[[[[1,\"ember-cli-dfinity Demo\"]],[]]]]],[1,\"\\n    \"]],[]]]]],[1,\"\\n  \"]],[]]]]],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[11,0],[4,[38,5],null,null],[12],[1,\"\\n  \"],[10,0],[14,0,\"main-content\"],[12],[1,\"\\n    \"],[10,2],[12],[1,\"This page demonstrates the Hello, World example for the Internet Computer implemented\\n      in EmberJS using the \"],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-dfinity\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-dfinity\"],[13],[1,\" frontend\\n      library. Give it a try!\"],[13],[1,\"\\n\\n    \"],[8,[39,6],null,null,null],[1,\"\\n\\n    \"],[10,2],[12],[1,\"This demo uses the following EmberJS add-ons in addition to\\n      \"],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-dfinity\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-dfinity\"],[13],[1,\".\"],[13],[1,\"\\n    \"],[10,\"ul\"],[12],[1,\"\\n      \"],[10,\"li\"],[12],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-mdc\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-mdc\"],[13],[1,\". This add-on provides support for Material Design components.\"],[13],[1,\"\\n      \"],[10,\"li\"],[12],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-styled\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-styled\"],[13],[1,\". This add-on adds polymorphic-like behavior to your styles.\"],[13],[1,\"\\n      \"],[10,\"li\"],[12],[10,3],[14,6,\"https://github.com/empress/ember-cli-showdown\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-showdown\"],[13],[1,\". This add-on allows you to use markdown on your page.\"],[13],[1,\"\\n    \"],[13],[1,\"\\n\\n    \"],[10,2],[12],[1,\"\\n      \"],[8,[39,7],null,[[\"@route\"],[\"main.details\"]],[[\"default\"],[[[[1,\"Learn more\"]],[]]]]],[1,\" about what makes this implementation different.\\n    \"],[13],[1,\"\\n  \"],[13],[1,\"\\n\"],[13],[1,\"\\n\\n\\n\"]],[],false,[\"page-title\",\"mdc-top-app-bar\",\"mdc-top-app-bar-row\",\"mdc-top-app-bar-section\",\"mdc-top-app-bar-title\",\"mdc-top-app-bar-fixed-adjustment\",\"demo/hello\",\"link-to\"]]",
     "moduleName": "demo-frontend/templates/main/index.hbs",
     "isStrictMode": false
   });
@@ -1470,7 +1470,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("demo-frontend/app")["default"].create({"name":"demo-frontend","version":"0.0.0+5136dd29"});
+            require("demo-frontend/app")["default"].create({"name":"demo-frontend","version":"0.0.0+22da92da"});
           }
         
 //# sourceMappingURL=demo-frontend.map

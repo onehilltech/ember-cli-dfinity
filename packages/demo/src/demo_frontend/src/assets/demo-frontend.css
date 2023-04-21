@@ -9,7 +9,82 @@
   font-weight: 500;
 }
 .route__application .main-content {
-  padding: 24px;
+  padding: 0 24px;
+}
+.route__application li {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: Roboto, sans-serif;
+  /* @alternate */
+  font-family: var(--mdc-typography-body1-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: 1rem;
+  /* @alternate */
+  font-size: var(--mdc-typography-body1-font-size, 1rem);
+  line-height: 1.5rem;
+  /* @alternate */
+  line-height: var(--mdc-typography-body1-line-height, 1.5rem);
+  font-weight: 400;
+  /* @alternate */
+  font-weight: var(--mdc-typography-body1-font-weight, 400);
+  letter-spacing: 0.03125em;
+  /* @alternate */
+  letter-spacing: var(--mdc-typography-body1-letter-spacing, 0.03125em);
+  text-decoration: inherit;
+  /* @alternate */
+  text-decoration: var(--mdc-typography-body1-text-decoration, inherit);
+  text-transform: inherit;
+  /* @alternate */
+  text-transform: var(--mdc-typography-body1-text-transform, inherit);
+}
+
+.route__main .mdc-top-app-bar {
+  color: rgba(0, 0, 0, 0.87);
+  /* @alternate */
+  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));
+  background-color: #fff;
+  /* @alternate */
+  background-color: var(--mdc-theme-surface, #fff);
+  color: rgba(0, 0, 0, 0.87);
+}
+.route__main .mdc-top-app-bar .mdc-top-app-bar__action-item,
+.route__main .mdc-top-app-bar .mdc-top-app-bar__navigation-icon {
+  color: rgba(0, 0, 0, 0.87);
+  /* @alternate */
+  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));
+}
+.route__main .mdc-top-app-bar .mdc-top-app-bar__action-item::before, .route__main .mdc-top-app-bar .mdc-top-app-bar__action-item::after,
+.route__main .mdc-top-app-bar .mdc-top-app-bar__navigation-icon::before,
+.route__main .mdc-top-app-bar .mdc-top-app-bar__navigation-icon::after {
+  background-color: rgba(0, 0, 0, 0.87);
+  /* @alternate */
+  background-color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));
+}
+.route__main .mdc-top-app-bar .mdc-top-app-bar__action-item:hover::before,
+.route__main .mdc-top-app-bar .mdc-top-app-bar__navigation-icon:hover::before {
+  opacity: 0.04;
+}
+.route__main .mdc-top-app-bar .mdc-top-app-bar__action-item.mdc-ripple-upgraded--background-focused::before, .route__main .mdc-top-app-bar .mdc-top-app-bar__action-item:not(.mdc-ripple-upgraded):focus::before,
+.route__main .mdc-top-app-bar .mdc-top-app-bar__navigation-icon.mdc-ripple-upgraded--background-focused::before,
+.route__main .mdc-top-app-bar .mdc-top-app-bar__navigation-icon:not(.mdc-ripple-upgraded):focus::before {
+  transition-duration: 75ms;
+  opacity: 0.12;
+}
+.route__main .mdc-top-app-bar .mdc-top-app-bar__action-item:not(.mdc-ripple-upgraded)::after,
+.route__main .mdc-top-app-bar .mdc-top-app-bar__navigation-icon:not(.mdc-ripple-upgraded)::after {
+  transition: opacity 150ms linear;
+}
+.route__main .mdc-top-app-bar .mdc-top-app-bar__action-item:not(.mdc-ripple-upgraded):active::after,
+.route__main .mdc-top-app-bar .mdc-top-app-bar__navigation-icon:not(.mdc-ripple-upgraded):active::after {
+  transition-duration: 75ms;
+  opacity: 0.12;
+}
+.route__main .mdc-top-app-bar .mdc-top-app-bar__action-item.mdc-ripple-upgraded,
+.route__main .mdc-top-app-bar .mdc-top-app-bar__navigation-icon.mdc-ripple-upgraded {
+  --mdc-ripple-fg-opacity: 0.12;
+}
+
+.route__main-index .mdc-form {
+  padding: 24px 0;
 }
 
 .demo-hello .mdc-button[type=submit] {

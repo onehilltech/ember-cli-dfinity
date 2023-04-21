@@ -3,7 +3,7 @@
 <MdcTopAppBar @fixed="true">
   <MdcTopAppBarRow>
     <MdcTopAppBarSection>
-      <MdcTopAppBarTitle>Demo</MdcTopAppBarTitle>
+      <MdcTopAppBarTitle>ember-cli-dfinity Demo</MdcTopAppBarTitle>
     </MdcTopAppBarSection>
   </MdcTopAppBarRow>
 </MdcTopAppBar>
@@ -11,10 +11,18 @@
 <div {{mdc-top-app-bar-fixed-adjustment}}>
   <div class="main-content">
     <p>This page demonstrates the Hello, World example for the Internet Computer implemented
-      in EmberJS using the <a href="https://github.com/onehilltech/ember-cli-dfinity" target="_blank">ember-cli-dfinity</a> frontend
+      in EmberJS using the <a href="https://github.com/onehilltech/ember-cli-dfinity" target="_blank" rel="noopener noreferrer">ember-cli-dfinity</a> frontend
       library. Give it a try!</p>
 
     <Demo::Hello />
+
+    <p>This demo uses the following EmberJS add-ons in addition to
+      <a href="https://github.com/onehilltech/ember-cli-dfinity" target="_blank" rel="noopener noreferrer">ember-cli-dfinity</a>.</p>
+    <ul>
+      <li><a href="https://github.com/onehilltech/ember-cli-mdc" target="_blank" rel="noopener noreferrer">ember-cli-mdc</a>. This add-on provides support for Material Design components.</li>
+      <li><a href="https://github.com/onehilltech/ember-cli-styled" target="_blank" rel="noopener noreferrer">ember-cli-styled</a>. This add-on adds polymorphic-like behavior to your styles.</li>
+      <li><a href="https://github.com/empress/ember-cli-showdown" target="_blank" rel="noopener noreferrer">ember-cli-showdown</a>. This add-on allows you to use markdown on your page.</li>
+    </ul>
 
     <p>
       <LinkTo @route="main.details">Learn more</LinkTo> about what makes this implementation different.

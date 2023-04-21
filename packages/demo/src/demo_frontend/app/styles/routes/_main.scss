@@ -1,0 +1,11 @@
+// route: main
+
+@use "@material/top-app-bar" as topappbar;
+
+.route__main {
+  .mdc-top-app-bar {
+    @include topappbar.ink-color(text-primary-on-light);
+    @include topappbar.icon-ink-color(text-primary-on-light);
+    @include topappbar.fill-color-accessible(surface);
+  }
+}

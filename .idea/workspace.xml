@@ -3,18 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="fdbe049b-97c3-48fe-8fcd-c7db8ae96c70" name="Changes" comment="d">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/components/demo/hello.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/components/demo/hello.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/styles/_components.scss" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/styles/_components.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/styles/_routes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/styles/_routes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/styles/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/templates/main/details.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/templates/main/details.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/styles/routes/_application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/styles/routes/_application.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/templates/application.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/templates/application.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/templates/main/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/templates/main/index.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/demo-frontend.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/demo-frontend.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/demo-frontend.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/demo-frontend.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/demo-frontend.map" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/demo-frontend.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/test-support.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/test-support.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/tests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/tests.map" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/tests.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/vendor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/tests/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/tests/index.html" afterDir="false" />
@@ -127,7 +123,8 @@
       <workItem from="1679428635756" duration="8946000" />
       <workItem from="1679497088313" duration="8233000" />
       <workItem from="1681873990205" duration="7370000" />
-      <workItem from="1681917584765" duration="2381000" />
+      <workItem from="1681917584765" duration="2669000" />
+      <workItem from="1682047044973" duration="3007000" />
     </task>
     <servers />
   </component>
