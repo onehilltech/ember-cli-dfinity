@@ -59,6 +59,19 @@
     }
   });
 });
+;define("demo-frontend/components/code-snippet", ["exports", "ember-cli-code-snippet/components/code-snippet"], function (_exports, _codeSnippet) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function () {
+      return _codeSnippet.default;
+    }
+  });
+});
 ;define("demo-frontend/components/demo/hello", ["exports", "@ember/component", "@ember/template-factory", "@glimmer/component", "@ember/object", "@glimmer/tracking", "ember-cli-dfinity"], function (_exports, _component, _templateFactory, _component2, _object, _tracking, _emberCliDfinity) {
   "use strict";
 
@@ -152,6 +165,19 @@
   }), _applyDecoratedDescriptor(_class.prototype, "validity", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "validity"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "submit", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "submit"), _class.prototype)), _class));
   _exports.default = DemoHelloComponent;
   (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, DemoHelloComponent);
+});
+;define("demo-frontend/components/inline-code-snippet", ["exports", "ember-cli-code-snippet/components/inline-code-snippet"], function (_exports, _inlineCodeSnippet) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function () {
+      return _inlineCodeSnippet.default;
+    }
+  });
 });
 ;define("demo-frontend/components/mdc-button-link-to", ["exports", "ember-cli-mdc-button/components/mdc-button-link-to"], function (_exports, _mdcButtonLinkTo) {
   "use strict";
@@ -556,6 +582,34 @@
     }
   });
 });
+;define("demo-frontend/controllers/application", ["exports", "@ember/controller", "@glimmer/tracking"], function (_exports, _controller, _tracking) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  var _class, _descriptor;
+  function _initializerDefineProperty(target, property, descriptor, context) { if (!descriptor) return; Object.defineProperty(target, property, { enumerable: descriptor.enumerable, configurable: descriptor.configurable, writable: descriptor.writable, value: descriptor.initializer ? descriptor.initializer.call(context) : void 0 }); }
+  function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+  function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) { var desc = {}; Object.keys(descriptor).forEach(function (key) { desc[key] = descriptor[key]; }); desc.enumerable = !!desc.enumerable; desc.configurable = !!desc.configurable; if ('value' in desc || desc.initializer) { desc.writable = true; } desc = decorators.slice().reverse().reduce(function (desc, decorator) { return decorator(target, property, desc) || desc; }, desc); if (context && desc.initializer !== void 0) { desc.value = desc.initializer ? desc.initializer.call(context) : void 0; desc.initializer = undefined; } if (desc.initializer === void 0) { Object.defineProperty(target, property, desc); desc = null; } return desc; }
+  function _initializerWarningHelper(descriptor, context) { throw new Error('Decorating class property failed. Please ensure that ' + 'proposal-class-properties is enabled and runs after the decorators transform.'); }
+  let ApplicationController = (_class = class ApplicationController extends _controller.default {
+    constructor() {
+      super(...arguments);
+      _defineProperty(this, "queryParams", ['canisterId']);
+      _initializerDefineProperty(this, "canisterId", _descriptor, this);
+    }
+  }, (_descriptor = _applyDecoratedDescriptor(_class.prototype, "canisterId", [_tracking.tracked], {
+    configurable: true,
+    enumerable: true,
+    writable: true,
+    initializer: null
+  })), _class);
+  _exports.default = ApplicationController;
+});
 ;define("demo-frontend/controllers/main/index", ["exports", "@ember/controller", "@ember/object", "@glimmer/tracking", "ember-cli-dfinity"], function (_exports, _controller, _object, _tracking, _emberCliDfinity) {
   "use strict";
 
@@ -701,6 +755,18 @@
     return match ? match[0] : version;
   }
   var _default = (0, _helper.helper)(appVersion);
+  _exports.default = _default;
+});
+;define("demo-frontend/helpers/ember-cli-dfinity", ["exports", "@ember/component/helper", "@ember/template"], function (_exports, _helper, _template) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  var _default = (0, _helper.helper)(function emberCliDfinity() {
+    return (0, _template.htmlSafe)('<a href="https://github.com/onehilltech/ember-cli-dfinity" target="_blank">ember-cli-dfinity</a>');
+  });
   _exports.default = _default;
 });
 ;define("demo-frontend/helpers/ensure-safe-component", ["exports", "@embroider/util"], function (_exports, _util) {
@@ -1373,8 +1439,8 @@
   });
   _exports.default = void 0;
   var _default = (0, _templateFactory.createTemplateFactory)({
-    "id": "irizRHoV",
-    "block": "[[[1,[28,[35,0],[\"How it works\"],null]],[1,\"\\n\\n\"],[8,[39,1],null,[[\"@fixed\"],[\"true\"]],[[\"default\"],[[[[1,\"\\n  \"],[8,[39,2],null,null,[[\"default\"],[[[[1,\"\\n    \"],[8,[39,3],null,null,[[\"default\"],[[[[1,\"\\n      \"],[8,[39,4],null,[[\"@route\"],[\"main.index\"]],null],[1,\"\\n      \"],[8,[39,5],null,null,[[\"default\"],[[[[1,\"How it works\"]],[]]]]],[1,\"\\n    \"]],[]]]]],[1,\"\\n  \"]],[]]]]],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[11,0],[4,[38,6],null,null],[12],[1,\"\\n\\n\"],[13]],[],false,[\"page-title\",\"mdc-top-app-bar\",\"mdc-top-app-bar-row\",\"mdc-top-app-bar-section\",\"mdc-top-app-bar-navigate-up-to\",\"mdc-top-app-bar-title\",\"mdc-top-app-bar-fixed-adjustment\"]]",
+    "id": "CmJkNFsE",
+    "block": "[[[1,[28,[35,0],[\"How it works\"],null]],[1,\"\\n\\n\"],[8,[39,1],null,[[\"@fixed\"],[\"true\"]],[[\"default\"],[[[[1,\"\\n  \"],[8,[39,2],null,null,[[\"default\"],[[[[1,\"\\n    \"],[8,[39,3],null,null,[[\"default\"],[[[[1,\"\\n      \"],[8,[39,4],null,[[\"@route\"],[\"main.index\"]],null],[1,\"\\n      \"],[8,[39,5],null,null,[[\"default\"],[[[[1,\"How it works\"]],[]]]]],[1,\"\\n    \"]],[]]]]],[1,\"\\n  \"]],[]]]]],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[11,0],[4,[38,6],null,null],[12],[1,\"\\n  \"],[10,0],[14,0,\"main-content\"],[12],[1,\"\\n    \"],[10,\"h6\"],[12],[1,\"No more bootstrapping code\"],[13],[1,\"\\n\\n    \"],[10,2],[12],[1,\"When you create your frontend using HTML and native Javascript (or a frontend library),\\n      you have to implement a lot of bootstrapping code as the project scales. As with the native\\n      Javascript implementation of the HelloWorld example, there are many bootstrapping and functional\\n      aspects intertwined with one another. This leads to a design that violates the SOLID principles\\n      of software design and has many code smells.\\n    \"],[13],[1,\"\\n\\n    \"],[8,[39,7],null,[[\"@lang\",\"@enableCopyButton\",\"@title\"],[\"javascript\",false,\"Native Javascript implementation of Hello, World\"]],[[\"default\"],[[[[1,\"\\n      import { helloworld_backend } from \\\"../../declarations/helloworld_backend\\\";\\n\\n      document.querySelector(\\\"form\\\").addEventListener(\\\"submit\\\", async (e) => {\\n        e.preventDefault();\\n        const button = e.target.querySelector(\\\"button\\\");\\n\\n        const name = document.getElementById(\\\"name\\\").value.toString();\\n\\n        button.setAttribute(\\\"disabled\\\", true);\\n\\n        // Interact with helloworld_backend actor, calling the greet method\\n        const greeting = await helloworld_backend.greet(name);\\n\\n        button.removeAttribute(\\\"disabled\\\");\\n        document.getElementById(\\\"greeting\\\").innerText = greeting;\\n\\n        return false;\\n      });\\n    \"]],[]]]]],[1,\"\\n\\n    \"],[10,2],[12],[1,\"When using EmberJS and \"],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-dfinity\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-dfinity\"],[13],[1,\",\\n      much of the bootstrapping and functional code above goes away. Instead, you only need to focus on the main logic of\\n      what to do when the submit button is clicked. The following code snippet showcases all that you need to write.\"],[13],[1,\"\\n\\n    \"],[8,[39,7],null,[[\"@lang\",\"@enableCopyButton\",\"@title\"],[\"javascript\",false,\"EmberJS implementation of Hello, World\"]],[[\"default\"],[[[[1,\"\\n      export default class MainIndexController extends Controller {\\n        // ...\\n\\n        @action\\n        async submit () {\\n          this.greeting = await this.hello.greet(this.name);\\n        }\\n\\n        // ...\\n      }\\n    \"]],[]]]]],[1,\"\\n\\n    \"],[10,2],[12],[1,\"Because many of the concerns you manually implement when using native Javascript\\n      (or a Javascript library) are handled for you out-of-the-box in a clean manner, you\\n      can focus on making your design more robust. Here is the same example above that includes\\n      basic exception handling where we display the error as a snackbar message.\"],[13],[1,\"\\n\\n    \"],[8,[39,7],null,[[\"@lang\",\"@enableCopyButton\",\"@title\"],[\"javascript\",false,\"EmberJS implementation with some exception handling\"]],[[\"default\"],[[[[1,\"\\n      export default class MainIndexController extends Controller {\\n        // ...\\n\\n        @action\\n        async submit () {\\n          try {\\n            this.greeting = await this.hello.greet(this.name);\\n          }\\n          catch (err) {\\n            this.snackbar.showError (err);\\n          }\\n        }\\n\\n        // ...\\n      }\\n    \"]],[]]]]],[1,\"\\n\\n    \"],[10,\"h6\"],[12],[1,\"Easily bind to actors / canisters\"],[13],[1,\"\\n\\n    \"],[10,\"h6\"],[12],[1,\"Simplified state management\"],[13],[1,\"\\n\\n    \"],[10,\"h6\"],[12],[1,\"Reusable components\"],[13],[1,\"\\n\\n    \"],[10,\"h6\"],[12],[1,\"Auto- (and better) configuration management\"],[13],[1,\"\\n\\n    \"],[10,2],[12],[1,\"Native Javascript implementations of frontend apps on the Internet Computer do not come with\\n      configuration management out-of-the-box. This can make it \"],[10,\"em\"],[12],[1,\"hard\"],[13],[1,\" to design your frontend for\\n      different execution environments, like production vs. development, or have different agent and canister\\n      configurations.\\n    \"],[13],[1,\"\\n\\n    \"],[10,2],[12],[1,\"With EmberJS and \"],[1,[34,8]],[1,\", you can easily manage different configurations. For example, you\\n    can have different configurations for development vs. production. Likewise, you can have different configurations\\n    for different networking agents. Lastly, you can override default configurations at both build and runtime. This\\n      offers you great flexibility when designing and testing your frontend application.\"],[13],[1,\"\\n\\n    \"],[10,2],[12],[1,\"The following code snippet showcases the configuration for the Hello, World demo app. In this example,\\n    we are not defining any additional configurations because \"],[1,[34,8]],[1,\" is designed to work with minimal\\n    updates to the configuration. If needed, we can easily update this configuration with domain-specific\\n    configurations.\"],[13],[1,\"\\n\\n    \"],[8,[39,7],null,[[\"@lang\",\"@title\",\"@enableCopyButton\"],[\"javascript\",\"config/environment.js\",false]],[[\"default\"],[[[[1,\"\\n      'use strict';\\n\\n      module.exports = function (environment) {\\n        let ENV = {\\n          // ...\\n\\n          'ember-cli-dfinity': {\\n            // here you can add additional ember-cli-dfinity configurations to override the configuration\\n            // generated at build-time.\\n          }\\n        };\\n\\n        if (environment === 'development') {\\n          // here you can enable a development-specific features\\n        }\\n\\n        if (environment === 'test') {\\n          // here you can enable a test-specific features\\n        }\\n\\n        if (environment === 'production') {\\n          // here you can enable a production-specific features\\n        }\\n\\n        return ENV;\\n      };\\n    \"]],[]]]]],[1,\"\\n\\n    \"],[10,\"h6\"],[12],[1,\"Added bonus: supports all existing EmberJS add-ons\"],[13],[1,\"\\n\\n    \"],[10,2],[12],[1,\"When you use EmberJS for your frontend, you are able to use many of the existing EmberJS addons. This can\\n      help you save time and provide a much richer user experience. For example, this frontend was implemented using\\n      the following EmberJS add-ons:\"],[13],[1,\"\\n\\n    \"],[10,\"ul\"],[12],[1,\"\\n      \"],[10,\"li\"],[12],[1,[34,8]],[1,\". This add-on enables EmberJS for the Internet Computer.\"],[13],[1,\"\\n      \"],[10,\"li\"],[12],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-mdc\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-mdc\"],[13],[1,\". This add-on provides support for Material Design components.\"],[13],[1,\"\\n      \"],[10,\"li\"],[12],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-styled\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-styled\"],[13],[1,\". This add-on adds polymorphic-like behavior to your styles.\"],[13],[1,\"\\n      \"],[10,\"li\"],[12],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-code-snippet\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-code-snippet\"],[13],[1,\". This add-on provides components for displaying code snippets.\"],[13],[1,\"\\n    \"],[13],[1,\"\\n\\n    \"],[10,2],[12],[1,\"At \"],[10,3],[14,6,\"https://onehilltech.com\"],[14,\"target\",\"_blank\"],[12],[1,\"One Hill Technologies (One Hill Tech)\"],[13],[1,\", we\\n      have created a larger number of \"],[10,3],[14,6,\"https://github.com/onehilltech?q=ember&type=all&language=&sort=\"],[14,\"target\",\"_blank\"],[12],[1,\"EmberJS addons\"],[13],[1,\"\\n      that are available under the Apache 2.0 license. We welcome you to use them in your frontend.\\n      You can also find a comprehensive list of EmberJS add-ons at \"],[10,3],[14,6,\"https://emberobserver.com/\"],[14,\"target\",\"_blank\"],[12],[1,\"Ember Observer\"],[13],[1,\".\"],[13],[1,\"\\n  \"],[13],[1,\"\\n\"],[13]],[],false,[\"page-title\",\"mdc-top-app-bar\",\"mdc-top-app-bar-row\",\"mdc-top-app-bar-section\",\"mdc-top-app-bar-navigate-up-to\",\"mdc-top-app-bar-title\",\"mdc-top-app-bar-fixed-adjustment\",\"code-snippet\",\"ember-cli-dfinity\"]]",
     "moduleName": "demo-frontend/templates/main/details.hbs",
     "isStrictMode": false
   });
@@ -1388,8 +1454,8 @@
   });
   _exports.default = void 0;
   var _default = (0, _templateFactory.createTemplateFactory)({
-    "id": "s5NYkEex",
-    "block": "[[[1,[28,[35,0],[\"Demo\"],null]],[1,\"\\n\\n\"],[8,[39,1],null,[[\"@fixed\"],[\"true\"]],[[\"default\"],[[[[1,\"\\n  \"],[8,[39,2],null,null,[[\"default\"],[[[[1,\"\\n    \"],[8,[39,3],null,null,[[\"default\"],[[[[1,\"\\n      \"],[8,[39,4],null,null,[[\"default\"],[[[[1,\"ember-cli-dfinity Demo\"]],[]]]]],[1,\"\\n    \"]],[]]]]],[1,\"\\n  \"]],[]]]]],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[11,0],[4,[38,5],null,null],[12],[1,\"\\n  \"],[10,0],[14,0,\"main-content\"],[12],[1,\"\\n    \"],[10,2],[12],[1,\"This page demonstrates the Hello, World example for the Internet Computer implemented\\n      in EmberJS using the \"],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-dfinity\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-dfinity\"],[13],[1,\" frontend\\n      library. Give it a try!\"],[13],[1,\"\\n\\n    \"],[8,[39,6],null,null,null],[1,\"\\n\\n    \"],[10,2],[12],[1,\"This demo uses the following EmberJS add-ons in addition to\\n      \"],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-dfinity\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-dfinity\"],[13],[1,\".\"],[13],[1,\"\\n    \"],[10,\"ul\"],[12],[1,\"\\n      \"],[10,\"li\"],[12],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-mdc\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-mdc\"],[13],[1,\". This add-on provides support for Material Design components.\"],[13],[1,\"\\n      \"],[10,\"li\"],[12],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-styled\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-styled\"],[13],[1,\". This add-on adds polymorphic-like behavior to your styles.\"],[13],[1,\"\\n      \"],[10,\"li\"],[12],[10,3],[14,6,\"https://github.com/empress/ember-cli-showdown\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-showdown\"],[13],[1,\". This add-on allows you to use markdown on your page.\"],[13],[1,\"\\n    \"],[13],[1,\"\\n\\n    \"],[10,2],[12],[1,\"\\n      \"],[8,[39,7],null,[[\"@route\"],[\"main.details\"]],[[\"default\"],[[[[1,\"Learn more\"]],[]]]]],[1,\" about what makes this implementation different.\\n    \"],[13],[1,\"\\n  \"],[13],[1,\"\\n\"],[13],[1,\"\\n\\n\\n\"]],[],false,[\"page-title\",\"mdc-top-app-bar\",\"mdc-top-app-bar-row\",\"mdc-top-app-bar-section\",\"mdc-top-app-bar-title\",\"mdc-top-app-bar-fixed-adjustment\",\"demo/hello\",\"link-to\"]]",
+    "id": "ekP2XQrF",
+    "block": "[[[1,[28,[35,0],[\"Demo\"],null]],[1,\"\\n\\n\"],[8,[39,1],null,[[\"@fixed\"],[\"true\"]],[[\"default\"],[[[[1,\"\\n  \"],[8,[39,2],null,null,[[\"default\"],[[[[1,\"\\n    \"],[8,[39,3],null,null,[[\"default\"],[[[[1,\"\\n      \"],[8,[39,4],null,null,[[\"default\"],[[[[1,\"ember-cli-dfinity demo\"]],[]]]]],[1,\"\\n    \"]],[]]]]],[1,\"\\n  \"]],[]]]]],[1,\"\\n\"]],[]]]]],[1,\"\\n\\n\"],[11,0],[4,[38,5],null,null],[12],[1,\"\\n  \"],[10,0],[14,0,\"main-content\"],[12],[1,\"\\n    \"],[10,2],[12],[1,\"This page demonstrates the Hello, World example for the Internet Computer implemented\\n      in EmberJS using the \"],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-dfinity\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-dfinity\"],[13],[1,\" frontend\\n      library. Give it a try!\"],[13],[1,\"\\n\\n    \"],[8,[39,6],null,null,null],[1,\"\\n\\n    \"],[10,2],[12],[1,\"This demo uses the following EmberJS add-ons in addition to\\n      \"],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-dfinity\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-dfinity\"],[13],[1,\".\"],[13],[1,\"\\n    \"],[10,\"ul\"],[12],[1,\"\\n      \"],[10,\"li\"],[12],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-mdc\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-mdc\"],[13],[1,\". This add-on provides support for Material Design components.\"],[13],[1,\"\\n      \"],[10,\"li\"],[12],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-styled\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-styled\"],[13],[1,\". This add-on adds polymorphic-like behavior to your styles.\"],[13],[1,\"\\n      \"],[10,\"li\"],[12],[10,3],[14,6,\"https://github.com/onehilltech/ember-cli-code-snippet\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"ember-cli-code-snippet\"],[13],[1,\". This add-on provides components for displaying code snippets.\"],[13],[1,\"\\n    \"],[13],[1,\"\\n\\n    \"],[10,2],[12],[1,\"\\n      \"],[8,[39,7],null,[[\"@route\"],[\"main.details\"]],[[\"default\"],[[[[1,\"Learn more\"]],[]]]]],[1,\" about what makes this implementation different.\\n    \"],[13],[1,\"\\n  \"],[13],[1,\"\\n\"],[13],[1,\"\\n\\n\\n\"]],[],false,[\"page-title\",\"mdc-top-app-bar\",\"mdc-top-app-bar-row\",\"mdc-top-app-bar-section\",\"mdc-top-app-bar-title\",\"mdc-top-app-bar-fixed-adjustment\",\"demo/hello\",\"link-to\"]]",
     "moduleName": "demo-frontend/templates/main/index.hbs",
     "isStrictMode": false
   });
@@ -1470,7 +1536,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("demo-frontend/app")["default"].create({"name":"demo-frontend","version":"0.0.0+22da92da"});
+            require("demo-frontend/app")["default"].create({"name":"demo-frontend","version":"0.0.0+48c1968a"});
           }
         
 //# sourceMappingURL=demo-frontend.map

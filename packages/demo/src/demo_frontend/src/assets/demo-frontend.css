@@ -9,7 +9,7 @@
   font-weight: 500;
 }
 .route__application .main-content {
-  padding: 0 24px;
+  padding: 0 24px 24px;
 }
 .route__application li {
   -moz-osx-font-smoothing: grayscale;
@@ -35,6 +35,17 @@
   text-transform: inherit;
   /* @alternate */
   text-transform: var(--mdc-typography-body1-text-transform, inherit);
+}
+.route__application .code-snippet {
+  margin-bottom: 48px;
+}
+.route__application .code-snippet__header {
+  background-color: #6200ee;
+  /* @alternate */
+  background-color: var(--mdc-theme-primary, #6200ee);
+  color: rgba(0, 0, 0, 0.87);
+  /* @alternate */
+  color: var(--mdc-theme-text-primary-on-light, rgba(0, 0, 0, 0.87));
 }
 
 .route__main .mdc-top-app-bar {
@@ -92,6 +103,95 @@
 }
 .demo-hello__greeting {
   padding: 24px 0;
+}
+
+/*!
+  Theme: Solarized Dark
+  Author: Ethan Schoonover (modified by aramisgithub)
+  License: ~ MIT (or more permissive) [via base16-schemes-source]
+  Maintainer: @highlightjs/core-team
+  Version: 2021.09.0
+*/
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+.hljs {
+  color: #93a1a1;
+  background: #002b36;
+}
+
+.hljs ::selection, .hljs::selection {
+  background-color: #586e75;
+  color: #93a1a1;
+}
+
+.hljs-comment {
+  color: #657b83;
+}
+
+.hljs-tag {
+  color: #839496;
+}
+
+.hljs-operator, .hljs-punctuation, .hljs-subst {
+  color: #93a1a1;
+}
+
+.hljs-operator {
+  opacity: 0.7;
+}
+
+.hljs-bullet, .hljs-deletion, .hljs-name, .hljs-selector-tag, .hljs-template-variable, .hljs-variable {
+  color: #dc322f;
+}
+
+.hljs-attr, .hljs-link, .hljs-literal, .hljs-number, .hljs-symbol, .hljs-variable.constant_ {
+  color: #cb4b16;
+}
+
+.hljs-class .hljs-title, .hljs-title, .hljs-title.class_ {
+  color: #b58900;
+}
+
+.hljs-strong {
+  font-weight: 700;
+  color: #b58900;
+}
+
+.hljs-addition, .hljs-code, .hljs-string, .hljs-title.class_.inherited__ {
+  color: #859900;
+}
+
+.hljs-built_in, .hljs-doctag, .hljs-keyword.hljs-atrule, .hljs-quote, .hljs-regexp {
+  color: #2aa198;
+}
+
+.hljs-attribute, .hljs-function .hljs-title, .hljs-section, .hljs-title.function_, .ruby .hljs-property {
+  color: #268bd2;
+}
+
+.diff .hljs-meta, .hljs-keyword, .hljs-template-tag, .hljs-type {
+  color: #6c71c4;
+}
+
+.hljs-emphasis {
+  color: #6c71c4;
+  font-style: italic;
+}
+
+.hljs-meta, .hljs-meta .hljs-keyword, .hljs-meta .hljs-string {
+  color: #d33682;
+}
+
+.hljs-meta .hljs-keyword, .hljs-meta-keyword {
+  font-weight: 700;
 }
 
 html, body {

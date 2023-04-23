@@ -15,10 +15,19 @@
   }
 
   .main-content {
-    padding: 0 24px;
+    padding: 0 24px 24px;
   }
 
   li {
     @include typography.typography(body1);
+  }
+
+  .code-snippet {
+    margin-bottom: 48px;
+
+    &__header {
+      @include theme.prop(background-color, primary);
+      @include theme.prop(color, text-primary-on-light);
+    }
   }
 }

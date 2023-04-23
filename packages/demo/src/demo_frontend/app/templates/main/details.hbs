@@ -10,5 +10,157 @@
 </MdcTopAppBar>
 
 <div {{mdc-top-app-bar-fixed-adjustment}}>
+  <div class="main-content">
+    <h6>No more bootstrapping code</h6>
 
+    <p>When you create your frontend using HTML and native Javascript (or a frontend library),
+      you have to implement a lot of bootstrapping code as the project scales. As with the native
+      Javascript implementation of the HelloWorld example, there are many bootstrapping and functional
+      aspects intertwined with one another. This leads to a design that violates the SOLID principles
+      of software design and has many code smells.
+    </p>
+
+    <CodeSnippet @lang="javascript"
+                 @enableCopyButton={{false}}
+                 @title="Native Javascript implementation of Hello, World">
+      import { helloworld_backend } from "../../declarations/helloworld_backend";
+
+      document.querySelector("form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const button = e.target.querySelector("button");
+
+        const name = document.getElementById("name").value.toString();
+
+        button.setAttribute("disabled", true);
+
+        // Interact with helloworld_backend actor, calling the greet method
+        const greeting = await helloworld_backend.greet(name);
+
+        button.removeAttribute("disabled");
+        document.getElementById("greeting").innerText = greeting;
+
+        return false;
+      });
+    </CodeSnippet>
+
+    <p>When using EmberJS and <a href="https://github.com/onehilltech/ember-cli-dfinity" target="_blank" rel="noopener noreferrer">ember-cli-dfinity</a>,
+      much of the bootstrapping and functional code above goes away. Instead, you only need to focus on the main logic of
+      what to do when the submit button is clicked. The following code snippet showcases all that you need to write.</p>
+
+    <CodeSnippet @lang="javascript"
+                 @enableCopyButton={{false}}
+                 @title="EmberJS implementation of Hello, World">
+      export default class MainIndexController extends Controller {
+        // ...
+
+        @action
+        async submit () {
+          this.greeting = await this.hello.greet(this.name);
+        }
+
+        // ...
+      }
+    </CodeSnippet>
+
+    <p>Because many of the concerns you manually implement when using native Javascript
+      (or a Javascript library) are handled for you out-of-the-box in a clean manner, you
+      can focus on making your design more robust. Here is the same example above that includes
+      basic exception handling where we display the error as a snackbar message.</p>
+
+    <CodeSnippet @lang="javascript"
+                 @enableCopyButton={{false}}
+                 @title="EmberJS implementation with some exception handling">
+      export default class MainIndexController extends Controller {
+        // ...
+
+        @action
+        async submit () {
+          try {
+            this.greeting = await this.hello.greet(this.name);
+          }
+          catch (err) {
+            this.snackbar.showError (err);
+          }
+        }
+
+        // ...
+      }
+    </CodeSnippet>
+
+    <h6>Easily bind to actors / canisters</h6>
+
+    <p>The {{ember-cli-dfinity}} addon uses decorators to bind properties to (backend) actors in your frontend
+      application. As shown in the code snippet below, we are binding the Hello actor to the
+      <InlineCodeSnippet>hello</InlineCodeSnippet> property. This property exposes the interface of the
+      hello actor as defined in the candid file.</p>
+
+    <h6>Simplified state management</h6>
+
+    <h6>Reusable components</h6>
+
+    <h6>Auto- (and better) configuration management</h6>
+
+    <p>Native Javascript implementations of frontend apps on the Internet Computer do not come with
+      configuration management out-of-the-box. This can make it <em>hard</em> to design your frontend for
+      different execution environments, like production vs. development, or have different agent and canister
+      configurations.
+    </p>
+
+    <p>With EmberJS and {{ember-cli-dfinity}}, you can easily manage different configurations. For example, you
+    can have different configurations for development vs. production. Likewise, you can have different configurations
+    for different networking agents. Lastly, you can override default configurations at both build and runtime. This
+      offers you great flexibility when designing and testing your frontend application.</p>
+
+    <p>The following code snippet showcases the configuration for the Hello, World demo app. In this example,
+    we are not defining any additional configurations because {{ember-cli-dfinity}} is designed to work with minimal
+    updates to the configuration. If needed, we can easily update this configuration with domain-specific
+    configurations.</p>
+
+    <CodeSnippet @lang="javascript" @title="config/environment.js" @enableCopyButton={{false}}>
+      'use strict';
+
+      module.exports = function (environment) {
+        let ENV = {
+          // ...
+
+          'ember-cli-dfinity': {
+            // here you can add additional ember-cli-dfinity configurations to override the configuration
+            // generated at build-time.
+          }
+        };
+
+        if (environment === 'development') {
+          // here you can enable a development-specific features
+        }
+
+        if (environment === 'test') {
+          // here you can enable a test-specific features
+        }
+
+        if (environment === 'production') {
+          // here you can enable a production-specific features
+        }
+
+        return ENV;
+      };
+    </CodeSnippet>
+
+    <h6>Added bonus: supports all existing EmberJS add-ons</h6>
+
+    <p>When you use EmberJS for your frontend, you are able to use many of the existing EmberJS addons. This can
+      help you save time and provide a much richer user experience. For example, this frontend was implemented using
+      the following EmberJS add-ons:</p>
+
+    <ul>
+      <li>{{ember-cli-dfinity}}. This add-on enables EmberJS for the Internet Computer.</li>
+      <li><a href="https://github.com/onehilltech/ember-cli-mdc" target="_blank" rel="noopener noreferrer">ember-cli-mdc</a>. This add-on provides support for Material Design components.</li>
+      <li><a href="https://github.com/onehilltech/ember-cli-styled" target="_blank" rel="noopener noreferrer">ember-cli-styled</a>. This add-on adds polymorphic-like behavior to your styles.</li>
+      <li><a href="https://github.com/onehilltech/ember-cli-code-snippet" target="_blank" rel="noopener noreferrer">ember-cli-code-snippet</a>. This add-on provides components for displaying code snippets.</li>
+    </ul>
+
+    <p>At <a href="https://onehilltech.com" target="_blank">One Hill Technologies (One Hill Tech)</a>, we
+      have created a larger number of <a href="https://github.com/onehilltech?q=ember&type=all&language=&sort=" target="_blank">EmberJS addons</a>
+      that are available under the Apache 2.0 license. We welcome you to use them in your frontend.
+      You can also find a comprehensive list of EmberJS add-ons at <a href="https://emberobserver.com/" target="_blank">Ember Observer</a>.</p>
+  </div>
 </div>

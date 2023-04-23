@@ -1,3 +1,71 @@
+.code-snippet {
+  position: relative;
+  border-radius: 7px;
+
+  padding-bottom: 10px;
+}
+
+.code-snippet pre {
+  margin: 0;
+  overflow-x: auto;
+  padding-bottom: 16px;
+}
+
+.code-snippet .code-snippet__code {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.code-snippet .code-snippet__header {
+  padding: 8px 16px;
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: flex-end;
+  align-items: center;
+
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.code-snippet .code-snippet__footer {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.code-snippet .code-snippet__lang {
+
+}
+
+.code-snippet .code-snippet__title {
+  flex-grow: 1;
+}
+
+.code-snippet .code-snippet__copy {
+  margin-left: 8px;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.code-snippet .code-snippet__copy img {
+  height: 20px;
+}
+
+.code-snippet .code-snippet__copy i {
+  font-size: 20px;
+}
+
+
+.inline-code-snippet {
+  border-radius: 3px;
+  padding: 3px 8px !important;
+  font-size: 1em;
+}
+
 /**
  * This file contains variables for customizing the default them for your
  * MDC application. See
@@ -134,9 +202,9 @@
 }
 
 .mdc-button:not(:disabled) {
-  color: #6200ee;
+  color: #ff9800;
   /* @alternate */
-  color: var(--mdc-theme-primary, #6200ee);
+  color: var(--mdc-theme-primary, #ff9800);
 }
 
 .mdc-button:disabled {
@@ -208,16 +276,16 @@ svg.mdc-button__icon {
 
 .mdc-button--raised:not(:disabled),
 .mdc-button--unelevated:not(:disabled) {
-  background-color: #6200ee;
+  background-color: #ff9800;
   /* @alternate */
-  background-color: var(--mdc-theme-primary, #6200ee);
+  background-color: var(--mdc-theme-primary, #ff9800);
 }
 
 .mdc-button--raised:not(:disabled),
 .mdc-button--unelevated:not(:disabled) {
-  color: #fff;
+  color: #000;
   /* @alternate */
-  color: var(--mdc-theme-on-primary, #fff);
+  color: var(--mdc-theme-on-primary, #000);
 }
 
 .mdc-button--raised:disabled,
@@ -374,18 +442,18 @@ svg.mdc-button__icon {
 }
 
 .mdc-button .mdc-button__ripple::before, .mdc-button .mdc-button__ripple::after {
-  background-color: #6200ee;
+  background-color: #ff9800;
   /* @alternate */
-  background-color: var(--mdc-theme-primary, #6200ee);
+  background-color: var(--mdc-theme-primary, #ff9800);
 }
 
 .mdc-button:hover .mdc-button__ripple::before {
-  opacity: 0.04;
+  opacity: 0.08;
 }
 
 .mdc-button.mdc-ripple-upgraded--background-focused .mdc-button__ripple::before, .mdc-button:not(.mdc-ripple-upgraded):focus .mdc-button__ripple::before {
   transition-duration: 75ms;
-  opacity: 0.12;
+  opacity: 0.24;
 }
 
 .mdc-button:not(.mdc-ripple-upgraded) .mdc-button__ripple::after {
@@ -394,11 +462,11 @@ svg.mdc-button__icon {
 
 .mdc-button:not(.mdc-ripple-upgraded):active .mdc-button__ripple::after {
   transition-duration: 75ms;
-  opacity: 0.12;
+  opacity: 0.24;
 }
 
 .mdc-button.mdc-ripple-upgraded {
-  --mdc-ripple-fg-opacity: 0.12;
+  --mdc-ripple-fg-opacity: 0.24;
 }
 
 .mdc-button .mdc-button__ripple {
@@ -417,21 +485,21 @@ svg.mdc-button__icon {
 .mdc-button--raised .mdc-button__ripple::before, .mdc-button--raised .mdc-button__ripple::after,
 .mdc-button--unelevated .mdc-button__ripple::before,
 .mdc-button--unelevated .mdc-button__ripple::after {
-  background-color: #fff;
+  background-color: #000;
   /* @alternate */
-  background-color: var(--mdc-theme-on-primary, #fff);
+  background-color: var(--mdc-theme-on-primary, #000);
 }
 
 .mdc-button--raised:hover .mdc-button__ripple::before,
 .mdc-button--unelevated:hover .mdc-button__ripple::before {
-  opacity: 0.08;
+  opacity: 0.04;
 }
 
 .mdc-button--raised.mdc-ripple-upgraded--background-focused .mdc-button__ripple::before, .mdc-button--raised:not(.mdc-ripple-upgraded):focus .mdc-button__ripple::before,
 .mdc-button--unelevated.mdc-ripple-upgraded--background-focused .mdc-button__ripple::before,
 .mdc-button--unelevated:not(.mdc-ripple-upgraded):focus .mdc-button__ripple::before {
   transition-duration: 75ms;
-  opacity: 0.24;
+  opacity: 0.12;
 }
 
 .mdc-button--raised:not(.mdc-ripple-upgraded) .mdc-button__ripple::after,
@@ -442,12 +510,12 @@ svg.mdc-button__icon {
 .mdc-button--raised:not(.mdc-ripple-upgraded):active .mdc-button__ripple::after,
 .mdc-button--unelevated:not(.mdc-ripple-upgraded):active .mdc-button__ripple::after {
   transition-duration: 75ms;
-  opacity: 0.24;
+  opacity: 0.12;
 }
 
 .mdc-button--raised.mdc-ripple-upgraded,
 .mdc-button--unelevated.mdc-ripple-upgraded {
-  --mdc-ripple-fg-opacity: 0.24;
+  --mdc-ripple-fg-opacity: 0.12;
 }
 
 .mdc-button {
@@ -1095,18 +1163,18 @@ svg.mdc-button__icon {
 }
 
 .mdc-ripple-surface--primary::before, .mdc-ripple-surface--primary::after {
-  background-color: #6200ee;
+  background-color: #ff9800;
   /* @alternate */
-  background-color: var(--mdc-theme-primary, #6200ee);
+  background-color: var(--mdc-theme-primary, #ff9800);
 }
 
 .mdc-ripple-surface--primary:hover::before {
-  opacity: 0.04;
+  opacity: 0.08;
 }
 
 .mdc-ripple-surface--primary.mdc-ripple-upgraded--background-focused::before, .mdc-ripple-surface--primary:not(.mdc-ripple-upgraded):focus::before {
   transition-duration: 75ms;
-  opacity: 0.12;
+  opacity: 0.24;
 }
 
 .mdc-ripple-surface--primary:not(.mdc-ripple-upgraded)::after {
@@ -1115,11 +1183,11 @@ svg.mdc-button__icon {
 
 .mdc-ripple-surface--primary:not(.mdc-ripple-upgraded):active::after {
   transition-duration: 75ms;
-  opacity: 0.12;
+  opacity: 0.24;
 }
 
 .mdc-ripple-surface--primary.mdc-ripple-upgraded {
-  --mdc-ripple-fg-opacity: 0.12;
+  --mdc-ripple-fg-opacity: 0.24;
 }
 
 .mdc-ripple-surface--accent::before, .mdc-ripple-surface--accent::after {
@@ -1914,9 +1982,9 @@ svg.mdc-button__icon {
   }
 }
 .mdc-text-field .mdc-text-field__input {
-  caret-color: #6200ee;
+  caret-color: #ff9800;
   /* @alternate */
-  caret-color: var(--mdc-theme-primary, #6200ee);
+  caret-color: var(--mdc-theme-primary, #ff9800);
 }
 
 .mdc-text-field:not(.mdc-text-field--disabled) + .mdc-text-field-helper-line .mdc-text-field-helper-text {
@@ -2197,9 +2265,9 @@ svg.mdc-button__icon {
 }
 
 .mdc-text-field--filled .mdc-line-ripple::after {
-  border-bottom-color: #6200ee;
+  border-bottom-color: #ff9800;
   /* @alternate */
-  border-bottom-color: var(--mdc-theme-primary, #6200ee);
+  border-bottom-color: var(--mdc-theme-primary, #ff9800);
 }
 
 .mdc-text-field--filled .mdc-floating-label {
@@ -2294,9 +2362,9 @@ svg.mdc-button__icon {
 .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__leading,
 .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__notch,
 .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__trailing {
-  border-color: #6200ee;
+  border-color: #ff9800;
   /* @alternate */
-  border-color: var(--mdc-theme-primary, #6200ee);
+  border-color: var(--mdc-theme-primary, #ff9800);
 }
 
 .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__leading {
@@ -2381,9 +2449,9 @@ svg.mdc-button__icon {
 .mdc-text-field--textarea:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__leading,
 .mdc-text-field--textarea:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__notch,
 .mdc-text-field--textarea:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__trailing {
-  border-color: #6200ee;
+  border-color: #ff9800;
   /* @alternate */
-  border-color: var(--mdc-theme-primary, #6200ee);
+  border-color: var(--mdc-theme-primary, #ff9800);
 }
 
 .mdc-text-field--textarea .mdc-notched-outline .mdc-notched-outline__leading {
@@ -2704,7 +2772,7 @@ svg.mdc-button__icon {
 }
 
 .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
-  color: rgba(98, 0, 238, 0.87);
+  color: rgba(255, 152, 0, 0.87);
 }
 
 .mdc-text-field--focused .mdc-notched-outline__leading,
@@ -3088,12 +3156,12 @@ svg.mdc-button__icon {
  * The framework automatically handles this for you.
  */
 :root {
-  --mdc-theme-primary: #6200ee;
+  --mdc-theme-primary: #ff9800;
   --mdc-theme-secondary: #018786;
   --mdc-theme-background: #fff;
   --mdc-theme-surface: #fff;
   --mdc-theme-error: #b00020;
-  --mdc-theme-on-primary: #fff;
+  --mdc-theme-on-primary: #000;
   --mdc-theme-on-secondary: #fff;
   --mdc-theme-on-surface: #000;
   --mdc-theme-on-error: #fff;
@@ -3115,9 +3183,9 @@ svg.mdc-button__icon {
 }
 
 .mdc-theme--primary {
-  color: #6200ee !important;
+  color: #ff9800 !important;
   /* @alternate */
-  color: var(--mdc-theme-primary, #6200ee) !important;
+  color: var(--mdc-theme-primary, #ff9800) !important;
 }
 
 .mdc-theme--secondary {
@@ -3145,9 +3213,9 @@ svg.mdc-button__icon {
 }
 
 .mdc-theme--on-primary {
-  color: #fff !important;
+  color: #000 !important;
   /* @alternate */
-  color: var(--mdc-theme-on-primary, #fff) !important;
+  color: var(--mdc-theme-on-primary, #000) !important;
 }
 
 .mdc-theme--on-secondary {
@@ -3259,9 +3327,9 @@ svg.mdc-button__icon {
 }
 
 .mdc-theme--primary-bg {
-  background-color: #6200ee !important;
+  background-color: #ff9800 !important;
   /* @alternate */
-  background-color: var(--mdc-theme-primary, #6200ee) !important;
+  background-color: var(--mdc-theme-primary, #ff9800) !important;
 }
 
 .mdc-theme--secondary-bg {
@@ -3283,10 +3351,10 @@ svg.mdc-button__icon {
  * The framework automatically handles this for you.
  */
 .mdc-top-app-bar {
-  background-color: #6200ee;
+  background-color: #ff9800;
   /* @alternate */
-  background-color: var(--mdc-theme-primary, #6200ee);
-  color: white;
+  background-color: var(--mdc-theme-primary, #ff9800);
+  color: rgba(0, 0, 0, 0.87);
   display: flex;
   position: fixed;
   flex-direction: column;
@@ -3298,29 +3366,29 @@ svg.mdc-button__icon {
 
 .mdc-top-app-bar .mdc-top-app-bar__action-item,
 .mdc-top-app-bar .mdc-top-app-bar__navigation-icon {
-  color: #fff;
+  color: #000;
   /* @alternate */
-  color: var(--mdc-theme-on-primary, #fff);
+  color: var(--mdc-theme-on-primary, #000);
 }
 
 .mdc-top-app-bar .mdc-top-app-bar__action-item::before, .mdc-top-app-bar .mdc-top-app-bar__action-item::after,
 .mdc-top-app-bar .mdc-top-app-bar__navigation-icon::before,
 .mdc-top-app-bar .mdc-top-app-bar__navigation-icon::after {
-  background-color: #fff;
+  background-color: #000;
   /* @alternate */
-  background-color: var(--mdc-theme-on-primary, #fff);
+  background-color: var(--mdc-theme-on-primary, #000);
 }
 
 .mdc-top-app-bar .mdc-top-app-bar__action-item:hover::before,
 .mdc-top-app-bar .mdc-top-app-bar__navigation-icon:hover::before {
-  opacity: 0.08;
+  opacity: 0.04;
 }
 
 .mdc-top-app-bar .mdc-top-app-bar__action-item.mdc-ripple-upgraded--background-focused::before, .mdc-top-app-bar .mdc-top-app-bar__action-item:not(.mdc-ripple-upgraded):focus::before,
 .mdc-top-app-bar .mdc-top-app-bar__navigation-icon.mdc-ripple-upgraded--background-focused::before,
 .mdc-top-app-bar .mdc-top-app-bar__navigation-icon:not(.mdc-ripple-upgraded):focus::before {
   transition-duration: 75ms;
-  opacity: 0.24;
+  opacity: 0.12;
 }
 
 .mdc-top-app-bar .mdc-top-app-bar__action-item:not(.mdc-ripple-upgraded)::after,
@@ -3331,12 +3399,12 @@ svg.mdc-button__icon {
 .mdc-top-app-bar .mdc-top-app-bar__action-item:not(.mdc-ripple-upgraded):active::after,
 .mdc-top-app-bar .mdc-top-app-bar__navigation-icon:not(.mdc-ripple-upgraded):active::after {
   transition-duration: 75ms;
-  opacity: 0.24;
+  opacity: 0.12;
 }
 
 .mdc-top-app-bar .mdc-top-app-bar__action-item.mdc-ripple-upgraded,
 .mdc-top-app-bar .mdc-top-app-bar__navigation-icon.mdc-ripple-upgraded {
-  --mdc-ripple-fg-opacity: 0.24;
+  --mdc-ripple-fg-opacity: 0.12;
 }
 
 .mdc-top-app-bar__row {

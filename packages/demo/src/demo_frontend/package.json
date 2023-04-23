@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
-    "@ember/render-modifiers": "^1.0.2",
+    "@ember/render-modifiers": "^2.0.5",
     "@ember/test-helpers": "^2.6.0",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
@@ -50,6 +50,7 @@
     "ember-cli": "~3.28.6",
     "ember-cli-app-version": "^5.0.0",
     "ember-cli-babel": "^7.26.10",
+    "ember-cli-code-snippet": "^0.3.4",
     "ember-cli-custom-properties": "^2.0.2",
     "ember-cli-dependency-checker": "^3.2.0",
     "ember-cli-dfinity": "file:../../../ember-cli-dfinity",
