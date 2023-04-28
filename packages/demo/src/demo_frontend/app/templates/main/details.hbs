@@ -23,7 +23,7 @@
     <CodeSnippet @lang="javascript"
                  @enableCopyButton={{false}}
                  @title="Native Javascript implementation of Hello, World">
-      import { helloworld_backend } from "../../declarations/helloworld_backend";
+      import { demo_backend } from "../../declarations/demo_backend";
 
       document.querySelector("form").addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -33,8 +33,8 @@
 
         button.setAttribute("disabled", true);
 
-        // Interact with helloworld_backend actor, calling the greet method
-        const greeting = await helloworld_backend.greet(name);
+        // Interact with demo_backend actor, calling the greet method
+        const greeting = await demo_backend.greet(name);
 
         button.removeAttribute("disabled");
         document.getElementById("greeting").innerText = greeting;
@@ -92,11 +92,124 @@
     <p>The {{ember-cli-dfinity}} addon uses decorators to bind properties to (backend) actors in your frontend
       application. As shown in the code snippet below, we are binding the Hello actor to the
       <InlineCodeSnippet>hello</InlineCodeSnippet> property. This property exposes the interface of the
-      hello actor as defined in the candid file.</p>
+      <a href="https://github.com/onehilltech/ember-cli-dfinity/blob/main/packages/demo/src/demo_backend/main.mo" target="_blank">hello actor</a>.</p>
+
+    <CodeSnippet @lang="javascript"
+                 @enableCopyButton={{false}}
+                 @title="EmberJS implementation with some exception handling">
+      export default class MainIndexController extends Controller {
+        // ...
+
+        // Bind to the hello actor deployed to the demo_backend canister using the default agent.
+        @actor ({ canister: 'demo_backend' })
+        hello;
+
+        @action
+        async submit () {
+          try {
+            this.greeting = await this.hello.greet(this.name);
+          }
+          catch (err) {
+            this.snackbar.showError (err);
+          }
+        }
+
+        // ...
+      }
+    </CodeSnippet>
 
     <h6>Simplified state management</h6>
 
+    <p>In the native JavaScript implementation, you will see a lot of code for state management.
+    There is code of enabling/disabling the submit button. There is code for adding the event listener
+    for the button click. There is code for setting the greeting in the HTML element.</p>
+
+    <p>With EmberJS, state management is provided out-of-the-box via
+      <a href="https://glimmerjs.com" target="_blank">GlimmerJS</a>. This allows you to focus more on the
+      business-logic of your frontend application. Below is the HTML
+      (or <a href="https://handlebarsjs.com/" target="_blank">Handlebars</a>) and JavaScript controller code for the
+      EmberJS version of the Hello, World example.</p>
+
+    <CodeSnippet @lang="handlebars" @title="app/controllers/demo/index.hbs">
+        <div class="demo-hello">
+          {{code "<MdcForm @validity={{this.validity}} @submit={{this.submit}}>"}}
+            <MdcTextfield @style="outlined" @label="Enter a name here" required="true" @value={{this.name}} />
+
+            <MdcButton type="submit" @label="Submit" @style="unelevated" disabled={{this.isSubmitButtonDisabled}} />
+          {{code "</MdcForm>"}}
+
+          <div class="demo-hello__greeting"><b>Greeting:</b> {{this.greeting}}</div>
+        </div>
+    </CodeSnippet>
+
+    <CodeSnippet @lang="javascript" @title="app/templates/demo/index.js">
+      import Controller from '@ember/controller';
+      import { action } from '@ember/object';
+      import { tracked } from '@glimmer/tracking';
+
+      import { actor } from 'ember-cli-dfinity';
+
+      export default class MainIndexController extends Controller {
+        /// This property tracks the name entered in the input element.
+        @tracked
+        name;
+
+        /// This property tracks the valid state of the form.
+        @tracked
+        valid;
+
+        /// This property tracks when the frontend submits a request to the backend.
+        @tracked
+        submitting;
+
+        /// This property tracks the greeting returned from the backend, and displayed to the user.
+        @tracked
+        greeting;
+
+        // Bind to the hello actor deployed to the hello_backend canister using the default agent.
+        @actor ({ canister: 'demo_backend' })
+        hello;
+
+        /**
+         * This callback received the validity state of the form.
+         */
+        @action
+        validity (valid) {
+          this.valid = valid;
+        }
+
+        /**
+         * Callback that handles clicking the submit button on the form.
+         */
+        @action
+        async submit () {
+          try {
+            this.submitting = true;
+            this.greeting = await this.hello.greet(this.name);
+          }
+          catch (err) {
+            this.snackbar.showError (err);
+          }
+          finally {
+            this.submitting = false;
+          }
+        }
+
+        /**
+         * This accessor determines when the submit button is disabled.
+         */
+        get isSubmitButtonDisabled () {
+          return !this.valid || this.submitting;
+        }
+      }
+    </CodeSnippet>
+
     <h6>Reusable components</h6>
+
+    <p>EmberJS has a robust component architecture that allows to you create reusable components. This components
+      can then be used in other parts of your application. You can even export components from an addon. This makes
+      it easy to reuse components on different projects. For this demo, can easily place the frontend code (illustrated above)
+      that communicates with the backend actor in a component.</p>
 
     <h6>Auto- (and better) configuration management</h6>
 

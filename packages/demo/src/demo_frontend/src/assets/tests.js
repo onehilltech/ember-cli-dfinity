@@ -40,6 +40,29 @@ define("demo-frontend/tests/integration/components/demo/hello-test", ["@ember/te
     });
   });
 });
+define("demo-frontend/tests/integration/helpers/code-test", ["@ember/template-factory", "qunit", "ember-qunit", "@ember/test-helpers"], function (_templateFactory, _qunit, _emberQunit, _testHelpers) {
+  "use strict";
+
+  (0, _qunit.module)('Integration | Helper | code', function (hooks) {
+    (0, _emberQunit.setupRenderingTest)(hooks);
+
+    // TODO: Replace this with your real tests.
+    (0, _qunit.test)('it renders', async function (assert) {
+      this.set('inputValue', '1234');
+      await (0, _testHelpers.render)((0, _templateFactory.createTemplateFactory)(
+      /*
+        {{code this.inputValue}}
+      */
+      {
+        "id": "VI5YhtIv",
+        "block": "[[[1,[28,[35,0],[[30,0,[\"inputValue\"]]],null]]],[],false,[\"code\"]]",
+        "moduleName": "(unknown template module)",
+        "isStrictMode": false
+      }));
+      assert.dom(this.element).hasText('1234');
+    });
+  });
+});
 define("demo-frontend/tests/integration/helpers/ember-cli-dfinity-test", ["@ember/template-factory", "qunit", "ember-qunit", "@ember/test-helpers"], function (_templateFactory, _qunit, _emberQunit, _testHelpers) {
   "use strict";
 
