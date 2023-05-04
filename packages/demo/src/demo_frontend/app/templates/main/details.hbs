@@ -130,16 +130,16 @@
       (or <a href="https://handlebarsjs.com/" target="_blank" rel="noopener noreferrer">Handlebars</a>) and JavaScript controller code for the
       EmberJS version of the Hello, World example.</p>
 
-    <CodeSnippet @lang="handlebars" @title="app/controllers/demo/index.hbs">
-        <div class="demo-hello">
-          {{code "<MdcForm @validity={{this.validity}} @submit={{this.submit}}>"}}
-            <MdcTextfield @style="outlined" @label="Enter a name here" required="true" @value={{this.name}} />
+    <CodeSnippet @lang="html" @title="app/controllers/demo/index.hbs">
+        &lt;div class="demo-hello"&gt;
+          &lt;MdcForm @validity=\{{this.validity}} @submit=\{{this.submit}}&gt;
+            &lt;MdcTextfield @style="outlined" @label="Enter a name here" required="true" @value=\{{this.name}} /&gt;
 
-            <MdcButton type="submit" @label="Submit" @style="unelevated" disabled={{this.isSubmitButtonDisabled}} />
-          {{code "</MdcForm>"}}
+            &lt;MdcButton type="submit" @label="Submit" @style="unelevated" disabled=\{{this.isSubmitButtonDisabled}} /&gt;
+          &lt;/MdcForm&gt;
 
-          <div class="demo-hello__greeting"><b>Greeting:</b> {{this.greeting}}</div>
-        </div>
+          &lt;div class="demo-hello__greeting"&gt;&lt;b&gt;Greeting:&lt;/b&gt; {{this.greeting}}&lt;/div&gt;
+        &lt;/div&gt;
     </CodeSnippet>
 
     <CodeSnippet @lang="javascript" @title="app/templates/demo/index.js">
