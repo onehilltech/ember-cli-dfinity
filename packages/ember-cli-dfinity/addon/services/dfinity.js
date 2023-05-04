@@ -52,7 +52,7 @@ export default class DfinityService extends Service {
    */
   get defaultAgentName () {
     const ENV = getOwner(this).resolveRegistration('config:environment');
-    return get(ENV, 'dfx.canisters.defaultAgent');
+    return get(ENV, 'dfx.defaultAgent');
   }
 
   /**

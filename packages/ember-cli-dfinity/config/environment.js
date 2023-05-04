@@ -123,7 +123,7 @@ module.exports = function (environment, config) {
 
     if (network === 'ic') {
       config.dfx.agents.ic = {
-        host: 'https://icp0.io'
+        host: 'https://icp0.io/'
       }
     }
   }

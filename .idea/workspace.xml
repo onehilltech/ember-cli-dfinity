@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdbe049b-97c3-48fe-8fcd-c7db8ae96c70" name="Changes" comment="d">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/services/dfinity.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/services/dfinity.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/config/environment.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/config/environment.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +126,7 @@
       <workItem from="1681873990205" duration="7370000" />
       <workItem from="1681917584765" duration="2669000" />
       <workItem from="1682047044973" duration="19482000" />
-      <workItem from="1683156654253" duration="7656000" />
+      <workItem from="1683156654253" duration="8192000" />
     </task>
     <servers />
   </component>
