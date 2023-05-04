@@ -1,1 +1,0 @@
-/Users/james/Projects/ember/ember-cli-dfinity/packages/demo/src/declarations/demo_backend/demo_backend.did.js

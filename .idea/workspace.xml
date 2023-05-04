@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="fdbe049b-97c3-48fe-8fcd-c7db8ae96c70" name="Changes" comment="d">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/.env" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/components/demo/hello.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/components/demo/hello.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/declarations/demo_backend.did.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/templates/main/details.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/templates/main/details.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/demo-frontend.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/demo-frontend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/demo-frontend.map" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/demo-frontend.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/test-support.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/test-support.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/tests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/tests.map" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/tests.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/vendor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/vendor.map" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/vendor.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/demo-frontend.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/demo-frontend.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/demo-frontend.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/test-support.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/test-support.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/test-support.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/tests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/tests.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/vendor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/vendor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/assets/vendor.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/tests/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/tests/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/testem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/tests/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/lib/dfx-ember-app.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/lib/dfx-ember-app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,24 +46,30 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2KA0lqb2OsVDlhCSD7C2iqfIR9t" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/styles/routes" />
-    <property name="node.js.detected.package.ember-template-lint" value="true" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.ember-template-lint" value="$PROJECT_DIR$/node_modules/ember-template-lint" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/hilljh/Projects/onehilltech/ember-cli-dfinity",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/hilljh/Projects/onehilltech/ember-cli-dfinity/packages/demo/src/demo_frontend/node_modules/prettier",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/packages/demo/src/demo_frontend/app/styles/routes" />
@@ -124,6 +146,7 @@
       <workItem from="1681873990205" duration="7370000" />
       <workItem from="1681917584765" duration="2669000" />
       <workItem from="1682047044973" duration="19482000" />
+      <workItem from="1683156654253" duration="3853000" />
     </task>
     <servers />
   </component>

@@ -6,6 +6,9 @@ class DfxEmberApp extends EmberApp {
     super(
       defaults,
       merge(options, {
+        fingerprint: {
+          exclude: ['index.js']
+        },
         autoImport: {
           webpack: {
             node: {
