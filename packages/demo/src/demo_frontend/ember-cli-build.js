@@ -3,7 +3,14 @@
 const DfxEmberApp = require('ember-cli-dfinity/lib/dfx-ember-app');
 
 module.exports = function (defaults) {
-  let app = new DfxEmberApp(defaults, {});
+  let app = new DfxEmberApp(defaults, {
+    'ember-cli-terser': {
+      enabled: false
+    },
+    minifyCSS: {
+      enabled: false
+    }
+  });
 
   // Use `app.import` to add additional libraries to the generated
   // output files.

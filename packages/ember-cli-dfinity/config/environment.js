@@ -85,7 +85,7 @@ function registerAgents(registry, network) {
  * if they are not already defined.
  *
  * @param registry          Canister register
- * @param environment       Target network
+ * @param network       Target network
  */
 function registerCanisters(registry, network) {
   const canisters = requireCanisters(network);
