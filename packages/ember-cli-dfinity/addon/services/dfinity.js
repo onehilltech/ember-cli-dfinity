@@ -32,7 +32,7 @@ export default class DfinityService extends Service {
    */
   createActorFromIdl(idlFactory, options = {}) {
     const {
-      agentName = '$default',
+      agentName = this.defaultAgentName,
       canister,
       canisterId = this.canisterFor(canister),
       actorOptions = {},
@@ -48,10 +48,18 @@ export default class DfinityService extends Service {
   }
 
   /**
+   * Get the default agent name from the configuration.
+   */
+  get defaultAgentName () {
+    const ENV = getOwner(this).resolveRegistration('config:environment');
+    return get(ENV, 'dfx.canisters.defaultAgent');
+  }
+
+  /**
    * Get the default http agent.
    */
   get defaultAgent() {
-    return this.agentFor(DEFAULT_AGENT_NAME);
+    return this.agentFor(this.defaultAgentName);
   }
 
   canisterFor(name) {

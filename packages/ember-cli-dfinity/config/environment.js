@@ -104,6 +104,8 @@ function registerCanisters(registry, network) {
  * @param config               Application configuration
  */
 module.exports = function (environment, config) {
+  const network = process.env.DFX_NETWORK || (environment === 'production' ? 'ic' : 'local');
+
   if (!isCompilingDfx) {
     return {};
   }
@@ -117,11 +119,14 @@ module.exports = function (environment, config) {
   }
 
   if (!config.dfx.agents) {
-    config.dfx.agents = {};
-  }
+    config.dfx.agents = { };
 
-  const network =
-    process.env.DFX_NETWORK || (environment === 'production' ? 'ic' : 'local');
+    if (network === 'ic') {
+      config.dfx.agents.ic = {
+        bind: 'https://icp0.io'
+      }
+    }
+  }
 
   if (!config.dfx.defaultAgent) {
     config.dfx.defaultAgent = network;
