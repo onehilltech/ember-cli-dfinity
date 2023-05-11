@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fdbe049b-97c3-48fe-8fcd-c7db8ae96c70" name="Changes" comment="d">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/.env" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/src/demo_frontend/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/decorators/actor.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/decorators/actor.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,22 +32,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/hilljh/Projects/onehilltech/ember-cli-dfinity/packages/demo/.dfx/ic",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/hilljh/Projects/onehilltech/ember-cli-dfinity/packages/demo/src/demo_frontend/node_modules/prettier",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hilljh/Projects/onehilltech/ember-cli-dfinity/packages/demo/.dfx/ic&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/hilljh/Projects/onehilltech/ember-cli-dfinity/packages/demo/src/demo_frontend/node_modules/prettier&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/packages/demo/.dfx/ic" />
@@ -126,6 +125,9 @@
       <workItem from="1681917584765" duration="2669000" />
       <workItem from="1682047044973" duration="19482000" />
       <workItem from="1683156654253" duration="13445000" />
+      <workItem from="1683215356214" duration="64000" />
+      <workItem from="1683566090357" duration="1949000" />
+      <workItem from="1683827678971" duration="1164000" />
     </task>
     <servers />
   </component>

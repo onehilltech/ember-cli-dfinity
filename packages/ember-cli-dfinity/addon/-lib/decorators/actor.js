@@ -3,7 +3,7 @@ import decorator from '@onehilltech/decorator';
 import { getOwner } from '@ember/application';
 import { assert } from '@ember/debug';
 import { isNone, isPresent, isEmpty } from '@ember/utils';
-import { guidFor } from '@ember/object/internals';
+import { dasherize } from '@ember/string';
 
 import { isString } from 'lodash';
 
@@ -33,7 +33,7 @@ export default decorator(function actorDecorator(
   }
 
   let { canister, canisterId } = options;
-  const typename = `actor:${lookupName}`;
+  const typename = `actor:${dasherize (lookupName)}`;
   let instanceKey;
 
   descriptor.get = function () {
@@ -56,7 +56,7 @@ export default decorator(function actorDecorator(
       if (isEmpty(canisterId)) {
         canisterId = owner
           .lookup('service:dfinity')
-          .canisterFor(canister || defaultCanister);
+          .canisterFor(canister || defaultCanister || lookupName);
       }
 
       assert(
