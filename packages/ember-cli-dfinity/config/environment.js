@@ -121,10 +121,18 @@ module.exports = function (environment, config) {
   if (!config.dfx.agents) {
     config.dfx.agents = { };
 
-    if (network === 'ic') {
-      config.dfx.agents.ic = {
-        host: 'https://icp0.io/'
-      }
+    switch (network) {
+      case 'local':
+        config.dfx.agents.local = {
+          host: 'http://127.0.0.1:4943/'
+        }
+        break;
+
+      case 'ic':
+        config.dfx.agents.ic = {
+          host: 'https://icp0.io/'
+        }
+        break;
     }
   }
 
