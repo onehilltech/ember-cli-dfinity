@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fdbe049b-97c3-48fe-8fcd-c7db8ae96c70" name="Changes" comment="d">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/services/dfinity.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/services/dfinity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/config/environment.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/config/environment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/decorators/actor.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/decorators/actor.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +127,7 @@
       <workItem from="1683156654253" duration="13445000" />
       <workItem from="1683215356214" duration="64000" />
       <workItem from="1683566090357" duration="1949000" />
-      <workItem from="1683827678971" duration="4276000" />
+      <workItem from="1683827678971" duration="6296000" />
     </task>
     <servers />
   </component>

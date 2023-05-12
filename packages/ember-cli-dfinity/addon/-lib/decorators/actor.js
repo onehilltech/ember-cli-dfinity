@@ -32,7 +32,7 @@ export default decorator(function actorDecorator(
     lookupName = name;
   }
 
-  let { canister, canisterId } = options;
+  let { canister, canisterId, agentName = '$default' } = options;
   const typename = `actor:${dasherize (lookupName)}`;
   let instanceKey;
 
@@ -66,7 +66,7 @@ export default decorator(function actorDecorator(
     }
 
     if (isEmpty(instanceKey)) {
-      instanceKey = `${typename}@${canisterId}`;
+      instanceKey = `${typename}@${agentName}/${canisterId}`;
     }
 
     let instance = owner.lookup(instanceKey, { instantiate: false });
