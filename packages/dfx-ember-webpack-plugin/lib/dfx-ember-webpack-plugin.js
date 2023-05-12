@@ -33,7 +33,7 @@ class DfxEmberWebpackPlugin {
       }
     });
 
-    if (!!this._frontend) {
+    if (!!this._frontend && !!this._frontend.entrypoint) {
       // We found the frontend project. Instantiate a new HtmlWebpackPlugin since we need
       // to apply it after our plugin.
       this._htmlPlugin = new HtmlWebpackPlugin ({
@@ -53,15 +53,17 @@ class DfxEmberWebpackPlugin {
     // here, then we have to rely on the developer setting the correct value. We override
     // the value here because it needs to occur before the initialize() hook.
 
-    merge (compiler.options, {
-      entry: {
-        index: {
-          import: [
-            path.join(this.context, this._frontend.entrypoint).replace(/\.html$/, '.js')
-          ]
+    if (!!this._frontend.entrypoint) {
+      merge (compiler.options, {
+        entry: {
+          index: {
+            import: [
+              path.join(this.context, this._frontend.entrypoint).replace(/\.html$/, '.js')
+            ]
+          }
         }
-      }
-    });
+      });
+    }
 
     compiler.hooks.compile.tap (WEBPACK_PLUGIN_NAME, () => {
       const { entrypoint } = this._frontend;
@@ -95,7 +97,8 @@ class DfxEmberWebpackPlugin {
     });
 
     // Apply the html plugin after we have applied our hooks.
-    this._htmlPlugin.apply (compiler);
+    if (!!this._htmlPlugin)
+      this._htmlPlugin.apply (compiler);
   }
 
   /// The managed html plugin.
