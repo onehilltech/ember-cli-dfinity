@@ -6,6 +6,7 @@ import { get } from '@ember/object';
 import { assert } from '@ember/debug';
 
 import { Actor, HttpAgent } from '@dfinity/agent';
+import { tracked } from "@glimmer/tracking";
 
 const DEFAULT_AGENT_NAME = '$default';
 
@@ -74,6 +75,9 @@ export default class DfinityService extends Service {
     return canisterId;
   }
 
+  @tracked
+  identity;
+
   /**
    * Get the agent by its name.
    *
@@ -81,19 +85,18 @@ export default class DfinityService extends Service {
    * @return {any}
    */
   agentFor(name) {
-    let agent = agents.get(name);
+    let agent = agents.get (name);
 
-    if (isPresent(agent)) {
+    if (isPresent (agent)) {
       return agent;
     }
 
-    const ENV = getOwner(this).resolveRegistration('config:environment');
-    const agentOptions = get(ENV, `dfx.agents.${name}`);
+    const ENV = getOwner (this).resolveRegistration ('config:environment');
+    const agentOptions = get (ENV, `dfx.agents.${name}`) || {};
 
-    if (isNone(agentOptions)) {
-      console.warn(
-        `The configuration for agent ${name} is not defined. Fix this by adding its configuration to config/environment.js.`
-      );
+    // Update the agent options with an identity.
+    if (isPresent (this.identity) && isNone (agentOptions.identity)) {
+      agentOptions.identity = this.identity;
     }
 
     // Create a new agent, and save the agent to our collection.
@@ -112,5 +115,14 @@ export default class DfinityService extends Service {
     }
 
     return agent;
+  }
+
+  /**
+   * Set the identity for the agents.
+   *
+   * @param identity
+   */
+  setIdentity (identity) {
+    this.identity = identity;
   }
 }

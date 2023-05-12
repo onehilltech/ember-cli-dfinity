@@ -106,34 +106,35 @@ function registerCanisters(registry, network) {
 module.exports = function (environment, config) {
   const network = process.env.DFX_NETWORK || (environment === 'production' ? 'ic' : 'local');
 
-  if (!isCompilingDfx) {
+  if (!isCompilingDfx)
     return {};
-  }
 
-  if (!config.dfx) {
+  if (!config.dfx)
     config.dfx = {};
-  }
 
-  if (!config.dfx.canisters) {
+  if (!config.dfx.canisters)
     config.dfx.canisters = {};
-  }
 
-  if (!config.dfx.agents) {
-    config.dfx.agents = { };
+  if (!config.dfx.agents)
+    config.dfx.agents = {};
 
-    switch (network) {
-      case 'local':
+  switch (network) {
+    case 'local':
+      if (!config.dfx.agents.local) {
         config.dfx.agents.local = {
           host: 'http://127.0.0.1:4943/'
         }
-        break;
+      }
 
-      case 'ic':
+      break;
+
+    case 'ic':
+      if (!config.dfx.agents.ic) {
         config.dfx.agents.ic = {
           host: 'https://icp0.io/'
         }
-        break;
-    }
+      }
+      break;
   }
 
   if (!config.dfx.defaultAgent) {
