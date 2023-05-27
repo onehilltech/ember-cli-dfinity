@@ -16,6 +16,13 @@ Getting Started
 See the [Getting Started](https://github.com/onehilltech/ember-cli-dfinity/blob/main/docs/getting-started.md) tutorial 
 to quickly learn how to use the EmberJS add-on in your project.
 
+Demonstration
+-------------------------------
+
+You can see a demo of a dApp using the EmberJS frontend here.
+
+    https://vkx2r-zaaaa-aaaap-aa55a-cai.icp0.io/
+
 License
 ------------------------------------------------------------------------------
 
