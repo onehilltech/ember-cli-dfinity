@@ -64,19 +64,19 @@ function mapType(IDL, definition) {
 
       default:
         // Let's try to handle the more complex type definitions.
-        if (definition.startsWith('vec')) {
-          const vectorType = term.substring(0, 3);
-          return IDL.Vec(mapType(IDL, vectorType));
-        } else if (definition.startsWith('opt')) {
+        if (definition.startsWith('opt')) {
           const optType = definition.substring(0, 3);
           return IDL.Opt(mapType(IDL, optType));
-        } else {
-          throw new Error(
-            `We do not understand '${definition}' IDL definition type.`
-          );
+        }
+        else {
+          throw new Error(`We do not understand '${definition}' IDL definition type.`);
         }
     }
-  } else if (isPlainObject(definition)) {
+  }
+  else if (isArray (definition)) {
+    return IDL.Vec (mapType (IDL, definition[0]))
+  }
+  else if (isPlainObject(definition)) {
     const { record, service, variant, function: func } = definition;
 
     if (record) {
