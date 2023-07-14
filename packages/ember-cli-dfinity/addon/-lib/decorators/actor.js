@@ -4,6 +4,7 @@ import { getOwner } from '@ember/application';
 import { assert } from '@ember/debug';
 import { isNone, isPresent, isEmpty } from '@ember/utils';
 import { dasherize } from '@ember/string';
+import { get } from '@ember/object';
 
 import { isString } from 'lodash';
 
@@ -32,7 +33,7 @@ export default decorator(function actorDecorator(
     lookupName = name;
   }
 
-  let { canister, canisterId, agentName = '$default' } = options;
+  let { canister, canisterPropertyName, canisterId, agentName = '$default' } = options;
   const typename = `actor:${dasherize (lookupName)}`;
   let instanceKey;
 
@@ -42,6 +43,10 @@ export default decorator(function actorDecorator(
     // each time this properties is accessed.
 
     const owner = getOwner(this);
+
+    if (isPresent (canisterPropertyName)) {
+      canisterId = get (this, canisterPropertyName);
+    }
 
     if (isEmpty(canisterId)) {
       const ENV = owner.resolveRegistration('config:environment');
