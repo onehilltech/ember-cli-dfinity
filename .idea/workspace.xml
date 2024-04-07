@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdbe049b-97c3-48fe-8fcd-c7db8ae96c70" name="Changes" comment="d">
+      <change afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/codemods.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lerna.json" beforeDir="false" afterPath="$PROJECT_DIR$/lerna.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demo/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demo/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/dfx-ember-webpack-plugin/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/dfx-ember-webpack-plugin/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/dfx-ember-webpack-plugin/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/dfx-ember-webpack-plugin/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/actor.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/actor.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +135,8 @@
       <workItem from="1685148101110" duration="744000" />
       <workItem from="1689344372928" duration="1392000" />
       <workItem from="1693415595055" duration="3000" />
-      <workItem from="1712019995747" duration="214000" />
+      <workItem from="1712019995747" duration="871000" />
+      <workItem from="1712154666618" duration="1007000" />
     </task>
     <servers />
   </component>

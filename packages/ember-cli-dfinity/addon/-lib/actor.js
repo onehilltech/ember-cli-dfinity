@@ -1,8 +1,12 @@
-import { Actor as IC } from '@dfinity/agent';
 import EmberObject from '@ember/object';
 import { inject as service } from '@ember/service';
 
-import { mapValues, isString, isArray, isPlainObject, compact } from 'lodash';
+import {
+  mapValues,
+  isString,
+  isArray,
+  isPlainObject,
+} from 'lodash';
 
 /**
  * Make the string definition to the IDL definition.
