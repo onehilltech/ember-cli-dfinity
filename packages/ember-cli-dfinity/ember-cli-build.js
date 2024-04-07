@@ -3,6 +3,7 @@
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function (defaults) {
+<<<<<<< HEAD
   let app = new EmberAddon(defaults, {
     autoImport: {
       webpack: {
@@ -11,6 +12,10 @@ module.exports = function (defaults) {
         },
       },
     },
+=======
+  const app = new EmberAddon(defaults, {
+    // Add options here
+>>>>>>> 8fa453e (v3.28.6...v4.12.2)
   });
 
   /*

@@ -1,18 +1,15 @@
-ember-cli-dfinity
-==============================================================================
+# ember-cli-dfinity
 
 An add-on for using the Internet Computer in your EmberJS app.
 
-Compatibility
-------------------------------------------------------------------------------
+## Compatibility
 
-* Ember.js v3.24 or above
-* Ember CLI v3.24 or above
-* Node.js v12 or above
+* Ember.js v4.4 or above
+* Ember CLI v4.4 or above
+* Node.js v14 or above
 
 
-Installation
-------------------------------------------------------------------------------
+## Installation
 
 ```
 ember install ember-cli-dfinity
@@ -20,6 +17,7 @@ ember install ember-cli-dfinity
 
 ### On-chain Dapp
 
+<<<<<<< HEAD
 If you are building the app to run on the Internet Computer, then you must install
 the [dfx-ember-webpack-plugin](https://github.com/onehilltech/dfx-ember-webpack-plugin)
 Webpack plugin into the dfx project so it builds the EmberJS asset canister correctly.
@@ -27,6 +25,9 @@ Webpack plugin into the dfx project so it builds the EmberJS asset canister corr
 
 Defining actors
 ------------------------------------------------------------------------------
+=======
+## Usage
+>>>>>>> 8fa453e (v3.28.6...v4.12.2)
 
 Actors are the primary artifacts (or components) exposed by a canister running
 on the Internet Computer. The actor has an interface, which represents the publicly
@@ -155,13 +156,11 @@ module.exports = function (environment) {
 }
 ```
 
-Contributing
-------------------------------------------------------------------------------
+## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
 
-License
-------------------------------------------------------------------------------
+## License
 
 This project is licensed under the [Apache-2.0](LICENSE.md).

@@ -23,7 +23,16 @@
 # ember-try
 /.node_modules.ember-try/
 /bower.json.ember-try
+/npm-shrinkwrap.json.ember-try
 /package.json.ember-try
+<<<<<<< HEAD
 
 .idea/
 
+=======
+/package-lock.json.ember-try
+/yarn.lock.ember-try
+
+# broccoli-debug
+/DEBUG/
+>>>>>>> 8fa453e (v3.28.6...v4.12.2)
