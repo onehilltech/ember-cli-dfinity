@@ -1,8 +1,6 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
-import { inject as service } from '@ember/service';
-
 import { actor } from 'ember-cli-dfinity';
 
 export default class IndexController extends Controller {

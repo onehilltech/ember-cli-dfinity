@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdbe049b-97c3-48fe-8fcd-c7db8ae96c70" name="Changes" comment="d">
-      <change afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/codemods.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/actor.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/actor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/decorators/function.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/addon/-lib/decorators/function.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/codemods.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/ember-cli-build.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/ember-cli-build.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/tests/dummy/app/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/tests/dummy/app/controllers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ember-cli-dfinity/tests/helpers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ember-cli-dfinity/tests/helpers/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,26 +66,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Run dummy application" type="EMBER_SERVE_CONFIGURATION" factoryName="Ember Serve">
-      <option name="PORT" value="" />
-      <option name="HOST" value="" />
-      <option name="ENVIRONMENT" value="development" />
-      <option name="OUTPUT_PATH" value="" />
-      <option name="WATCHER" value="" />
-      <option name="PROXY" value="" />
-      <option name="PROXY_SECURE" value="true" />
-      <option name="PROXY_TRANSPARENT" value="true" />
-      <option name="LIVE_RELOAD" value="true" />
-      <option name="LIVE_RELOAD_HOST" value="" />
-      <option name="LIVE_RELOAD_BASE_URL" value="" />
-      <option name="LIVE_RELOAD_PORT" value="" />
-      <option name="SSL" value="false" />
-      <option name="SSL_KEY" value="" />
-      <option name="SSL_CERT" value="" />
-      <module name="NAME" value="ember-cli-dfinity" />
-      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v18.20.0/bin/node" />
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="EMBER_SERVE_CONFIGURATION" factoryName="Ember Serve">
       <option name="PORT" value="" />
       <option name="HOST" value="" />
@@ -136,7 +120,7 @@
       <workItem from="1689344372928" duration="1392000" />
       <workItem from="1693415595055" duration="3000" />
       <workItem from="1712019995747" duration="871000" />
-      <workItem from="1712154666618" duration="1007000" />
+      <workItem from="1712154666618" duration="2281000" />
     </task>
     <servers />
   </component>

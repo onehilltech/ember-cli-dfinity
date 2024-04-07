@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-const decorator = require('@onehilltech/decorator');
-const { isArray } = require('lodash');
+import decorator from '@onehilltech/decorator';
+import { isArray } from 'lodash';
 
 function actorFunction(target, key, descriptor, params) {
   let [type, input, output] = params;
